@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mobile.sarproj.com.layout.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:draggedItem="@id/drag_item"
+    app:rightItem="@id/right_view"
+    app:swipeDirection="left">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/right_view"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="end|center"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btn_partager"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.1"
+            android:visibility="visible"
+            android:background="@color/blueShare"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_share_white" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btn_envoyer"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.1"
+            android:visibility="visible"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_send_white" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btn_delete"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:background="@drawable/bg_delete_red"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="18dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_delete_white" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:id="@+id/drag_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="1dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="8dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:layout_marginStart="10dp"
+                >
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="0"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/num_demande"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sfpro_display_medium"
+                        android:paddingStart="5dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/demande"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="17sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_commentaire"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_comm_blue" />
+
+                    <ImageView
+                        android:id="@+id/img_demande_envoyee"
+                        android:layout_width="32dp"
+                        android:layout_height="40dp"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_ok" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lbl_date_debut_fin_depense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sfpro_display_light"
+                        android:paddingStart="5dp"
+                        android:text="@string/_4_d_penses_de_26_au_28_juillet_2020"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_montant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:paddingEnd="10dp"
+                        android:text="290,75€"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_calendar_grey_in_list" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtDateEnvoi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/sfpro_display_medium"
+                        android:text="13/06/2020"
+                        android:textColor="@color/darkGray"
+                        android:textSize="15sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</mobile.sarproj.com.layout.SwipeLayout>

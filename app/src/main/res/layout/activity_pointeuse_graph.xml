@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.pointeuse_graph.PointeuseGraphActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_center"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bg_cumul_jour_white"
+        android:elevation="3dp"
+        >
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_cumulative_day"
+            android:padding="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/cumul_journ_e"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginEnd="10dp"
+            />
+        <TextView
+            android:id="@+id/txt_cumul"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="00:00"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_date_picker_white"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right_date"
+        app:layout_constraintHeight_max="190dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left_date"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/btn_start"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical">
+
+                <com.mikhaellopez.circleview.CircleView
+                    android:id="@+id/circleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cv_color="#5793CE" />
+
+                <ImageView
+                    android:id="@+id/imgStopPlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_play_pointeuse_white" />
+            </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_chronometre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:elevation="3dp"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="00:00:00"
+                android:textColor="@android:color/black"
+                android:textSize="22sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTypesActivitiesPointeuse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rectangle_blue_radius"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right_date"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left_date"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_previous_date"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:padding="12dp"
+            android:src="@drawable/ic_back_date" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/sf_ui_display_semibold"
+            android:gravity="center"
+            android:text="@string/_24_mars_2020"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/btn_next_date"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:padding="12dp"
+            android:src="@drawable/ic_next_date"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ImageView
+        android:id="@+id/btn_commentaires"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_comm_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/img_arrow_back"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_center"
+        android:layout_margin="20dp"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_view_comment"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right_commentaire"
+        app:layout_constraintStart_toEndOf="@id/guideline_left_commentaire"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/btn_close_commetaires"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="end"
+            android:padding="6dp"
+            android:src="@drawable/ic_close_view_comment"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_commentaires"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_close_commetaires"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constrainedHeight="true"
+            android:layout_marginBottom="45dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            app:layout_constraintTop_toBottomOf="@id/recycle_commentaires"
+            >
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/txt_commentaire"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@drawable/bg_date_picker_white"
+                android:elevation="2dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="20dp"
+                android:textSize="12sp"
+                android:hint="@string/ajouter_un_commentaire"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_send_comment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_send_comment"
+                android:elevation="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.36" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.64" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left_commentaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right_commentaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.35" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

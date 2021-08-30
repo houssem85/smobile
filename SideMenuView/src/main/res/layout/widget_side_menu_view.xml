@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/mLayoutRoot"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="70dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_side_menu"
+    >
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnOpenCloseMenu"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/ic_menu"
+        android:padding="15dp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemsMenuRecyclerView"
+        android:layout_width="330dp"
+        android:layout_height="match_parent"
+        />
+</androidx.appcompat.widget.LinearLayoutCompat>

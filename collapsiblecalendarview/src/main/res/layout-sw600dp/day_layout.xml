@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingTop="6dp"
+    >
+    <TextView
+        android:id="@+id/txt_day"
+        android:layout_width="@dimen/day_circle_width"
+        android:layout_height="@dimen/day_circle_height"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/poppins_semibold"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp"
+        android:paddingBottom="6dp"
+        android:paddingStart="2dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/img_event_tag"
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            app:srcCompat="@drawable/dot_icon"
+            android:visibility="gone"
+            app:tint="#354360"
+            />
+        <ImageView
+            android:id="@+id/img_employee_present"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_valide" />
+        <ImageView
+            android:id="@+id/img_employee_absent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_refused" />
+        <ImageView
+            android:id="@+id/img_request_absence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_request" />
+        <TextView
+            android:id="@+id/txt_nb_sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="1"
+            android:visibility="gone"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="12sp"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</LinearLayout >

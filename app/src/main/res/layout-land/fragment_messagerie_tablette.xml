@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui_tablette.messagerie.MessagerieTabletteViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui_tablette.messagerie.MessagerieTabletteFragment">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/centerQuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolBar"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorAccent"
+            >
+            <ImageView
+                android:id="@+id/btnNouveauMessage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="30dp"
+                android:padding="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/lblTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_add_absence"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:gravity="center"
+                android:text="@string/messagerie"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <FrameLayout
+            android:id="@+id/firstFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/centerQuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+        <RelativeLayout
+            android:id="@+id/secondFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/centerQuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Aucun_message_sélectionné"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="20dp"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/appCompatButtonNouveauMessage"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_widget_blue"
+                    android:text="@string/Nouveau_Message"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+        <View
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@color/greySeparator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/centerQuideLine"
+            app:layout_constraintTop_toTopOf="@+id/view5" />
+        <View
+            android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_arc_top_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

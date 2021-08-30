@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:indeterminateTint="@color/colorPrimary"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineSpacingExtra="6dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/sfpro_display_lightitalic"
+        android:text="@string/votre_demande_est_en_cours_de_traitement"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        />
+</LinearLayout>

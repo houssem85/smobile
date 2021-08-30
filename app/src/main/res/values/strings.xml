@@ -1,0 +1,404 @@
+<resources>
+
+    <string name="state_connect_card_reader">Connecter le lecteur de carte</string>
+    <string name="state_grant_usb_device">Autoriser l’utilisation de l’outil USB</string>
+    <string name="state_grant_refused">Demande d’autorisation refusée</string>
+    <string name="state_insert_driver_card">Insérer la carte conducteur dans le lecteur</string>
+    <string name="state_reading">Lecture de carte en cours</string>
+    <string name="state_use_driver_card">La carte inséré est incompatible !! Veuillez la retirer</string>
+    <string name="state_remove_driver_card">Retirer la carte du lecteur!</string>
+
+    <string name="loader_title">Chargement</string>
+    <string name="loader_message">Veuillez patienter…</string>
+
+    <string name="lecture_termine">Lecture Terminée</string>
+    <string name="d_tection_d_une_nouvelle_carte">Détection d\'une nouvelle carte</string>
+    <string name="card_no_detected">nous avons détecté que vous avez insérer une nouvelle carte dont le numéro de carte ne correspond pas</string>
+    <string name="arr_ter_la_lecture">arrêter la lecture</string>
+    <string name="continuer_la_lecture">continuer la lecture</string>
+
+    <string name="Precondition_Required_no_associated_driver">Condition préalable requise: conducteur non associé</string>
+
+    <string name="app_name">SPI</string>
+
+
+    <string name="com_auth0_lock_action_log_in">S’identifier</string>
+    <string name="entrer_votre_Email">Entrer votre mail</string>
+    <string name="format_email_incorrecte">Email incorrect</string>
+    <string name="entrer_votre_mot_de_passe">Entrer votre mot de passe</string>
+    <string name="email_ou_mot_de_passe_incorrect">Email ou de mot de passe incorrect</string>
+
+    <string name="appwidget_text">Strada Mobile</string>
+    <string name="appwidget_text_start_pointage">Pointage %s en cours</string>
+    <string name="appwidget_text_end_pointage">Pointage arrêté</string>
+
+    <string name="Lundi">L</string>
+    <string name="Mardi">M</string>
+    <string name="Mercredi">M</string>
+    <string name="Jeudi">J</string>
+    <string name="Vendredi">V</string>
+    <string name="Samedi">S</string>
+    <string name="Dimanche">D</string>
+    <string name="_24">24</string>
+    <string name="avr">AVR</string>
+    <string name="cumul_journ_e">Cumul journée</string>
+    <string name="_8_00">8:00</string>
+    <string name="_00_00">00:00</string>
+    <string name="demande_d_absence">Demande d\'absence</string>
+    <string name="votre_demande_d_absence_pour_le_15_04_2020_a_t">Votre demande d\'absence pour le 15/04/2020 a été</string>
+    <string name="il_y_a_2_min">Il y a 2 min</string>
+    <string name="accueil">Accueil</string>
+    <string name="pointeuse">Pointeuse</string>
+    <string name="mes_activit_s">Mes Activités</string>
+    <string name="menu_card_reader">Lecteur de carte</string>
+    <string name="mon_administratif">Mon Administratif</string>
+    <string name="notifications">Notifications</string>
+    <string name="messagerie">Messagerie</string>
+    <string name="profil">Profil</string>
+    <string name="a_propos">A propos</string>
+    <string name="miguel_albert">Miguel Albert</string>
+    <string name="lundi_13_avril_2020">Lundi, 13 Avril 2020</string>
+    <string name="mes_notifications">Mes Notifications</string>
+    <string name="voir_tous">Voir tous</string>
+    <string name="_19_janvier_2029">19 Janvier 2029</string>
+    <string name="service">Service</string>
+    <string name="nuit">Nuit</string>
+    <string name="mes_prochaines_absences">Mes Prochaines Absences</string>
+    <string name="type_d_absence">Type d\'absence :</string>
+    <string name="choisir_votre_type_d_absence">Choisir votre type d\'absence</string>
+    <string name="date_de_d_but">Date de début :</string>
+    <string name="date_de_fin">Date de fin :</string>
+    <string name="dur_e">Durée</string>
+    <string name="duree">Durée</string>
+    <string name="votre_commentaire">Votre commentaire :</string>
+    <string name="ecrivez_votre_commentaire_ici">Ecrivez votre commentaire ici</string>
+    <string name="votre_demande_d_absence_est_maintenant_en_attente">Votre demande d\'absence est maintenant en attente</string>
+    <string name="ok">Ok</string>
+    <string name="annuler">Annuler</string>
+    <string name="terminer">Terminer</string>
+    <string name="votre_demande_est_en_cours_de_traitement">Votre demande est en cours de traitement</string>
+    <string name="heure_d_but">Heure début</string>
+    <string name="heure_fin">Heure fin</string>
+    <string name="heure_de_fin">Heure de fin</string>
+    <string name="publi_par">Publié par</string>
+    <string name="m_albertoo">- M Albertoo</string>
+    <string name="il_y_a_2_jours">il y a 2 jours</string>
+    <string name="_24_mars_2020">24 Mars 2020</string>
+    <string name="_5_46">5:46</string>
+    <string name="ajouter_un_commentaire">Ajouter un commentaire</string>
+    <string name="pas_de_commentaires_pour_le_moment">Pas de commentaires pour le moment</string>
+    <string name="tous_les_commentaires_apparaissent_ici">Tous les commentaires apparaissent ici</string>
+    <string name="_2_jours">2 Jours</string>
+    <string name="demande_d_absence_valid_e">Demande d\'absence validée</string>
+    <string name="du_15_04_2020">Du 15/04/2020</string>
+    <string name="_17_04_2020">17/04/2020</string>
+    <string name="solde_absence">Solde d\'absence</string>
+    <string name="demande_d_absence_en_cours">Demande d\'absence en cours</string>
+    <string name="cp">CP</string>
+    <string name="rc">RC</string>
+    <string name="r">R</string>
+    <string name="rcr">RCR</string>
+    <string name="votre_solde_est">Votre solde est : 4.00</string>
+    <string name="acquis">Acquis</string>
+    <string name="pris">Pris</string>
+    <string name="en_attente">En attente</string>
+    <string name="jours"> Jours</string>
+    <string name="du"> Du</string>
+    <string name="au"> Au</string>
+    <string name="gerer_les_absences">Gérer les absences</string>
+    <string name="mes_absences">Mes absences</string>
+    <string name="calendrier_d_quipe">Calendrier d\'équipe</string>
+    <string name="_18_02_2020">18/02/2020</string>
+    <string name="_au">au</string>
+    <string name="au_17_04_2020">au 17 04 2020</string>
+    <string name="a_valider">À valider</string>
+    <string name="valid_es">Validées</string>
+    <string name="refus_es">Refusées</string>
+    <string name="cong_pay">Congé Payé</string>
+    <string name="r_cup_ration">Récupération</string>
+    <string name="repos_compensateur">Repos Compensateur</string>
+    <string name="repos_compensateur_remplacement">Repos Compensateur Remplacement</string>
+    <string name="alphab_tique">Alphabétique</string>
+    <string name="filtre">Filtre</string>
+    <string name="date_d_ch_ance">Date d\'échéance</string>
+    <string name="cong_s_pay_s">Congés payés</string>
+    <string name="cong_s_sans_solde">Congés sans solde</string>
+    <string name="historique_d_absences">Historique d\'absences</string>
+    <string name="demandes_accept_es">Demandes acceptées</string>
+    <string name="demandes_en_attente">Demandes en attente</string>
+    <string name="demandes_refus_es">Demandes refusées</string>
+    <string name="pas_d_absences_pour">Pas d\'absences pour</string>
+    <string name="toutes_les_absences_appara_tront_ici">Toutes les absences apparaîtront ici</string>
+    <string name="valider">Valider</string>
+    <string name="refuser">Refuser</string>
+    <string name="mes_activites">Mes activités</string>
+
+    <string name="card">Lecteur de Carte </string>
+
+
+    <string-array name="days">
+        <item>@string/Lundi</item>
+        <item>@string/Mardi</item>
+        <item>@string/Mercredi</item>
+        <item>@string/Jeudi</item>
+        <item>@string/Vendredi</item>
+        <item>@string/Samedi</item>
+        <item>@string/Dimanche</item>
+    </string-array>
+
+    <string name="Cumul_Mensuel">Cumul Mensuel</string>
+    <string name="Nombre_de_jours">Nombre de jours</string>
+    <string name="Temps_de_service">Temps de service</string>
+    <string name="Heure_nuit">Heure nuit</string>
+
+    <string name="janvier">Janvier</string>
+    <string name="fevrier">Février</string>
+    <string name="mars">Mars</string>
+    <string name="avril">Avril</string>
+    <string name="mai">Mai</string>
+    <string name="juin">Juin</string>
+    <string name="juillet">Juillet</string>
+    <string name="août">Août</string>
+    <string name="septembre">Septembre</string>
+    <string name="octobre">Octobre</string>
+    <string name="novembre">Novembre</string>
+    <string name="décembre">Décembre</string>
+
+    <string name="salari_s_pr_sents">Salariés Présents</string>
+    <string name="salari_s_absents">Salariés Absents</string>
+    <string name="demandes_d_absence">Demandes d\'absence</string>
+    <string name="sp">SP</string>
+    <string name="sa">SA</string>
+    <string name="pas_de_demandes">Pas de demandes</string>
+    <string name="d_absence">d\'absence</string>
+    <string name="toutes_les_demandes_d_absence_appara_tront_ici">Toutes les demandes d\'absence apparaîtront ici</string>
+    <string name="pas_de_salari_s">Pas de salariés</string>
+    <string name="pr_sents">présents</string>
+    <string name="absents">absents</string>
+    <string name="tous_les_salari_s_absents_appara_tront_ici">Tous les salariés absents apparaîtront ici</string>
+    <string name="mon_activit_de_la_journ_e">Mon activité de la journée</string>
+
+    <string name="mensuel">Mensuel</string>
+    <string name="hebdomadaire">Hebdomadaire</string>
+    <string name="ouvrir">ouvrir</string>
+    <string name="fermer">fermer</string>
+    <string name="toolbar_and_header">toolbar_and_header</string>
+    <string name="d_tails_demande">Détails Demande</string>
+    <string name="d_tails_du_cong">Détails du congé</string>
+    <string name="type_de_absence">Type d\'absence</string>
+    <string name="commentaire">Commentaire</string>
+    <string name="Loreum_ipsum_die_dolr_die_ipsum_loreum_die_dolt">Loreum ipsum die dolr die ipsum loreum die dolt</string>
+    <string name="de">De</string>
+    <string name="_15_01_2020">15/01/2020</string>
+    <string name="soldes_d_absence_du_salari">Soldes d\'absence du salarié :</string>
+    <string name="cette_demande_d_absence_a_t_valid_e">Cette demande d\'absence a été validée</string>
+    <string name="cette_demande_d_absence_a_t_refus_e">Cette demande d\'absence a été refusée</string>
+    <string name="cette_demande_d_absence_a_t_mise_en_attente">Cette demande d\'absence a été mise en attente</string>
+
+    <string name="semaine">Semaine</string>
+    <string name="semaine_d">Semaine %d</string>
+
+    <string name="choisir_l_annee">Choisir l’Année</string>
+    <string name="Heure_début">Heure début</string>
+    <string name="Heure_de_fin">Heure de fin</string>
+    <string name="vue_graphique">Vue graphique</string>
+    <string name="votre_cumul_de_la_journ_e">Votre cumul de la journée</string>
+    <string name="petit_d_jeuner">Petit-déjeuner</string>
+    <string name="mes_frais">Mes frais</string>
+    <string name="infractions">Infractions</string>
+    <string name="indemnite">Indemnités</string>
+    <string name="votre_cumul_mensuel">Votre cumul mensuel</string>
+
+    <string name="Tous">Tous</string>
+
+    <string name="Periode">Période</string>
+    <string name="Date_de_debut_">Date de début :</string>
+    <string name="Date_de_fin_">Date de fin :</string>
+
+    <string name="d_coucher">Découcher</string>
+
+    <string name="Infraction">Infractions</string>
+    <string name="duree_">Durée :</string>
+    <string name="Durée_autorisée">Durée autorisée</string>
+    <string name="Durée_effectuée">Durée effectuée</string>
+    <string name="Repos_autorisée">Repos autorisé</string>
+    <string name="Repos_effectuée">Repos effectué</string>
+    <string name="repos_">Repos :</string>
+    <string name="Votre_Commentaire_">Votre Commentaire :</string>
+    <string name="Justificatifs_">Justificatifs :</string>
+    <string name="Camera">Camera</string>
+    <string name="Galerie">Galerie</string>
+    <string name="PDF" translatable="false">PDF</string>
+    <string name="Annuler">Annuler</string>
+    <string name="Êtes_vous_sûr_de_vouloir_quitter">Êtes-vous sûr de vouloir quitter ?</string>
+    <string name="Oui">Oui</string>
+    <string name="Non">Non</string>
+    <string name="le_format_selectionne_est_incorrect">le format sélectionné est incorrect</string>
+    <string name="veuillez_selectionner_un_document_depuis_votre_memoire_interne">veuillez selectionner un document depuis votre memoire interne</string>
+    <string name="votre_cumul_hebdomadaire">Votre cumul hebdomadaire</string>
+    <string name="Matricule_">Matricule :</string>
+    <string name="Nom_">Nom :</string>
+    <string name="Prénom_">Prénom :</string>
+    <string name="Date_de_naissance_">Date de naissance :</string>
+    <string name="Se_déconnecter">Se déconnecter</string>
+    <string name="Deconnexion">Deconnexion</string>
+    <string name="En_cliquant_sur_déconnexion_vous_allez_vous_déconnectez_de_votre_compte">En cliquant sur déconnexion vous allez vous déconnecter de votre compte</string>
+    <string name="il_faut_choisir_la_date_de_debut_de_votre_conge">Il faut choisir la date de début de votre congé</string>
+    <string name="cumul_hebdomadaire">Cumul hebdomadaire</string>
+    <string name="reglage">Réglage</string>
+    <string name="Nouveau_Message">Nouveau Message</string>
+    <string name="Destinataire_">Destinataire :</string>
+    <string name="Objet_">Objet :</string>
+    <string name="Message_Prédéfini">Message Prédéfini</string>
+    <string name="Message_">Message :</string>
+    <string name="Enregistrer_le_message_comme_message_prédéfini">Enregistrer le message comme message prédéfini</string>
+    <string name="Envoyer">Envoyer</string>
+    <string name="Choisir_votre_message_prédéfini">Choisir votre message prédéfini</string>
+    <string name="Ecrire_votre_message_ici">Ecrire votre message ici</string>
+    <string name="Cherchez_votre_destinataire">Cherchez votre destinataire</string>
+    <string name="Trouvez_votre_destinataire">Trouvez votre destinataire</string>
+    <string name="Recherche_Récente_">Recherche Récente :</string>
+    <string name="boite_de_reception">Boîte de Réception</string>
+    <string name="message_predefini">Message Prédéfini</string>
+    <string name="_14_32">14:32</string>
+    <string name="message_lu">Message lu</string>
+    <string name="lorum_ipsum_die_dalr_ipsum_ae_ipsum_die_dalr_ipsum_loreu_ipsum_ip_ipsum_die_dalr_ipsum_ae_dlar_die_ipsu_lorem_die_ipsum">Lorum ipsum die dalr ipsum ae ipsum die dalr ipsum loreu ipsum ip ipsum die dalr ipsum ae dlar die ipsu lorem die ipsum ….</string>
+    <string name="objet">Objet :</string>
+    <string name="message">Message :</string>
+    <string name="Indemnités_et_primes">Indemnités et primes</string>
+    <string name="Mes_notes_de_frais">Mes notes de frais</string>
+    <string name="Solde_absences">Solde absences</string>
+    <string name="Frais">Frais</string>
+    <string name="Montant">Montant</string>
+    <string name="veuillez_choisir_une_date">veuillez choisir une date</string>
+    <string name="Message_non_lu">Message non lu</string>
+
+    <string name="Di">Dimanche</string>
+    <string name="Lu">Lundi</string>
+    <string name="Ma">Mardi</string>
+    <string name="Me">Mercredi</string>
+    <string name="Je">Jeudi</string>
+    <string name="Ve">Vendredi</string>
+    <string name="Sa">Samedi</string>
+    <string name="retour">Retour</string>
+    <string name="recherche">Recherche</string>
+    <string name="demande">Demande #</string>
+    <string name="_4_d_penses_de_26_au_28_juillet_2020">4 dépenses de 26 au 28 Juillet 2020</string>
+    <string name="Nouvelle_Demande">Nouvelle Demande</string>
+    <string name="Titre_">Titre :</string>
+    <string name="Commentaire_">Commentaire :</string>
+    <string name="Dépense">Dépenses :</string>
+    <string name="Nouvelle_Dépense">Nouvelle Dépense</string>
+    <string name="Date_de_dépense_">Date de dépense :</string>
+    <string name="Type_de_dépense_">Type de dépense :</string>
+    <string name="Montant_">Montant :</string>
+    <string name="Choisir_votre_type_de_dépense">Choisir votre type de dépense</string>
+    <string name="Hotel">Hotel</string>
+    <string name="Ajouter">Ajouter</string>
+    <string name="Votre_dépense_a_été_ajouter_avec_succès">Votre dépense a été ajoutée  avec succès</string>
+    <string name="ajouter_une_autre_dépense">ajouter une autre dépense</string>
+    <string name="Confirmez_l_envoi_de_votre_demande">Confirmez l’envoi de votre demande</string>
+    <string name="il_sera_impossible_de_la_modifier_après_l_enregistrement">* il sera impossible de la modifier après l’enregistrement</string>
+    <string name="Email">Email</string>
+    <string name="voulez_vous_enregistrer_cette_nouvelle_demande_avant_de_quitter">Voulez-vous enregistrer cette nouvelle demande avant de quitter ?</string>
+    <string name="envoyer_une_copie">Envoyer une copie à</string>
+    <string name="voulez_vous_enregistrer_votre_d_pense_avant_de_quitter">Voulez-vous enregistrer votre dépense avant de quitter ?</string>
+    <string name="d_tail_d_pense">Détails Dépense</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="il_faut_choisir_le_type_de_votre_absence">Il faut choisir le type de votre absence</string>
+    <string name="Graph">Graph</string>
+    <string name="Mon_activité_de_la_journée">Mon activité de la journée</string>
+    <string name="s_lectionnez_une_infraction_dans_la_liste_gauche_pour_voir_les_d_tails_de_celle_ci">Sélectionnez une infraction dans la liste à gauche pour voir les détails de celle-ci</string>
+    <string name="Aucun_message_sélectionné">Aucun message sélectionné</string>
+    <string name="écrivez_un_message">écrivez un message</string>
+    <string name="Trouver_votre_message">Trouver votre message</string>
+    <string name="message_predefini_">Message Prédéfini :</string>
+    <string name="Réglages">Réglages</string>
+    <string name="Notifications">Notifications</string>
+    <string name="Gestion_des_congés">Gestion des congés</string>
+    <string name="Notes_de_frais">Notes de frais</string>
+    <string name="Pointeuse">Pointeuse</string>
+    <string name="Infractions">Infractions</string>
+    <string name="Notifications_Pointeuse">Notifications Pointeuse</string>
+    <string name="Quand_le_temps_de_travail_journalier_est_supérieur_à_">Quand le temps de travail journalier est supérieur à :</string>
+    <string name="Temps_de_travail">Temps de travail :</string>
+    <string name="sa_cr_ation_strada_ciblait_essentiellement_le_secteur_du_transport_elle_s_adresse_aujourd_hui_toute_soci_t_poss_dant_une_flotte_de_v_hicules_vl_vu_pl_engins_de_chantier_autocars">À sa création STRADA ciblait essentiellement le secteur du transport. Elle s’adresse aujourd’hui à toute société possédant une flotte de véhicules : VL, VU, PL, engins de chantier, autocars…</string>
+    <string name="pour_cela_3_gammes_de_produits_ont_t_d_velopp_es_la_gestion_des_temps_l_informatique_embarqu_e_et_la_gestion_d_exploitation">Pour cela, 3 gammes de produits ont été développées : la gestion des temps, l’informatique embarquée et la gestion d’exploitation.</string>
+    <string name="version">Version</string>
+    <string name="compos_e_de_44_collaborateurs_strada_a_su_s_imposer_sur_le_march_fran_ais_et_espagnol">Composée de 44 collaborateurs, STRADA a su s’imposer sur le marché français et espagnol.</string>
+    <string name="propos">À propos</string>
+    <string name="Veuillez_vérifier_votre_connexion_Internet">Veuillez vérifier votre connexion Internet</string>
+    <string name="Déplacement">Déplacement</string>
+
+    <string name="_janv">jan</string>
+    <string name="_févr">févr</string>
+    <string name="_mars">mars</string>
+    <string name="_avril">avril</string>
+    <string name="_mai">mai</string>
+    <string name="_juin">juin</string>
+    <string name="_juil">juil</string>
+    <string name="_août">août</string>
+    <string name="_sept">sept</string>
+    <string name="_oct">oct</string>
+    <string name="_nov">nov</string>
+    <string name="_déc">Dec</string>
+
+    <string name="type">Type</string>
+    <string name="Synchronisation_avec_Firebase">Synchronisation avec Firebase</string>
+    <string name="Cette_action_doit_vous_étres_demandée_par_un_collaborateur_de_Strada_Service">Cette action doit vous étres demandée par un collaborateur de Strada Service</string>
+    <string name="Etes_vous_sur_de_vouloir_activer_cette_foncionnalité_">Etes-vous sur de vouloir activer cette foncionnalité ?</string>
+    <string name="Activer">Activer</string>
+    <string name="Desactiver">Désctiver</string>
+    <string name="utilisateur_non_connecté">utilisateur non connecté</string>
+    <string name="veuillez_activer_l_heure_automatique_sur_votre_appareil">veuillez activer l\'heure automatique sur votre appareil</string>
+    <string name="ilya_s_jour">ilya %s jour</string>
+    <string name="ilya_s_jours">ilya %s jours</string>
+    <string name="vie_prive">Vie privée</string>
+    <string name="Etes_vous_sur_de_vouloir_activer_vie_prive">Etes-vous sur de vouloir activer vie privée?</string>
+    <string name="Etes_vous_sur_de_vouloir_desactiver_vie_prive">Etes-vous sur de vouloir désactiver vie privée?</string>
+
+    <string name="aujourd_hui">aujourd\'hui</string>
+
+    <string name="aucune_connexion_internet">Aucune connexion internet</string>
+    <string name="Vous_êtes_hors_ligne_vos_informations_seront_synchronisées_dès_le_retour_de_la_connexion">Vous êtes hors ligne vos informations seront synchronisées dès le retour de la connexion</string>
+    <string name="Success">Success !</string>
+    <string name="La_connexion_est_rétablie_vos_informations_ont_été_synchronisées_avec_nos_serveurs">La connexion est rétablie, vos informations ont été synchronisées avec nos serveurs.</string>
+    <string name="pour_vous_identifier">Pour vous identifier</string>
+    <string name="saisissez_vos_nom_et_code_confidentiel_ou_ins_rez_votre_carte_dans_le_lecteur">Saisissez vos nom et code confidentiel ou Insérez votre carte dans le lecteur</string>
+    <string name="code_confidentielle">Code confidentielle</string>
+    <string name="acc_der_mon_espace_personnel">accéder à mon espace personnel</string>
+    <string name="veuillez_entrez_votre_adresse_email_pour_changez_votre_mot_de_passe">Veuillez entrez votre adresse email pour changez votre mot de passe !</string>
+    <string name="continuer"><![CDATA[Continuer >]]></string>
+    <string name="Non_autorisé">Non autorisé</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="connexion">Connexion</string>
+    <string name="appliquer">appliquer</string>
+    <string name="s_dépenses_de_s_au_s">%s dépenses de %s au %s</string>
+    <string name="s_dépense_de_s_au_s">%s dépense le %s</string>
+    <string name="demande_acceptée">Demande acceptée</string>
+    <string name="demande_en_cours">Demande en cours</string>
+    <string name="catégories_d_infractions">Catégories d\'infractions</string>
+    <string name="class_4" translatable="false">Class 4</string>
+    <string name="class_5" translatable="false">Class 5</string>
+    <string name="infraction_envoyée">infraction envoyée</string>
+    <string name="title_activity_main_spi">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="menu">Menu</string>
+    <string name="mes_documents">Mes Documents</string>
+    <string name="Type_d_activité">Type d\'activité</string>
+    <string name="add_document">add document</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Running Time</item>
+        <item>Distance</item>
+        <item>Average Speed</item>
+        <item>Calories Burned</item>
+    </string-array>
+    <string name="google_gms_key" templateMergeStrategy="preserve" translatable="false">AIzaSyALpw5r4wWioOSMwbKqENJqIHhEDpWYXbw</string>
+</resources>

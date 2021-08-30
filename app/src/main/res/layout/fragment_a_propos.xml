@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.apropos.AProposViewModel" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/frame_apropos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Card.Media"
+                    app:srcCompat="@drawable/bg_toolbare_spi"
+                    android:scaleType="centerCrop"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnOpenMenu"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="30dp"
+                    android:onClick="@{() -> viewModel.pressBtnOpenMenu()}"
+                    android:src="@drawable/ic_menu"
+                    android:tint="@color/colorAccent"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/appCompatTextView2"
+                    app:layout_constraintHorizontal_bias="0.011"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appCompatTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/propos"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:visibility="visible"
+                    app:layout_anchorGravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/apropos_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_logo_spi" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="By strada"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="12sp"
+                    />
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="24dp"
+                    android:focusable="true"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="15dp"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0.5dp"
+                    app:strokeColor="#000000"
+                    >
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="15dp"
+                            android:gravity="start|center"
+                            android:text="@string/sa_cr_ation_strada_ciblait_essentiellement_le_secteur_du_transport_elle_s_adresse_aujourd_hui_toute_soci_t_poss_dant_une_flotte_de_v_hicules_vl_vu_pl_engins_de_chantier_autocars"
+                            android:textColor="@color/blueVeryLight"
+                            android:textSize="15sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:drawablePadding="15dp"
+                            android:gravity="start|center"
+                            android:text="@string/pour_cela_3_gammes_de_produits_ont_t_d_velopp_es_la_gestion_des_temps_l_informatique_embarqu_e_et_la_gestion_d_exploitation"
+                            android:textColor="@color/blueVeryLight"
+                            android:textSize="15sp" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:drawablePadding="15dp"
+                            android:gravity="start|center"
+                            android:text="@string/compos_e_de_44_collaborateurs_strada_a_su_s_imposer_sur_le_march_fran_ais_et_espagnol"
+                            android:textColor="@color/blueVeryLight"
+                            android:textSize="15sp" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginEnd="5dp"
+                                android:src="@drawable/ic_linkedin" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="5dp"
+                                android:src="@drawable/ic_facebook" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="24dp"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0.5dp"
+                    app:strokeColor="#000000"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="15dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/sf_ui_display_semibold"
+                            android:gravity="start|center"
+                            android:text="@string/version"
+                            android:textColor="@color/blueVeryLight"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageView6"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtVersionName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center|end"
+                            android:textColor="@color/blueVeryLight"
+                            android:textSize="14sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </FrameLayout>
+</layout>

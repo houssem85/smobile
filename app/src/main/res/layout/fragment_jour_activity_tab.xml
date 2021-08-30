@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.pointeuse.jour_activitie.JourActivitieViewModel" />
+    </data>
+    <FrameLayout
+        android:id="@+id/fragmentjourActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.pointeuse.jour_activitie.JourActivitieFragment"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/corner_bottom_left"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="30dp"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_current_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:gravity="center"
+                android:text="24 Avril"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_anchorGravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_time_clock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/corner_top_right">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorWhite"
+                app:layout_constraintBottom_toTopOf="@+id/view_edit_comment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/view_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_type"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/seravek_light"
+                            android:gravity="center"
+                            android:text="@string/type"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_debut"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/seravek_light"
+                            android:gravity="center"
+                            android:text="@string/heure_d_but"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_fin"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/seravek_light"
+                            android:gravity="center"
+                            android:text="@string/heure_de_fin"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_duration"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/seravek_light"
+                            android:gravity="center"
+                            android:text="@string/dur_e"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewActivitiesfrag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewCommentairesfrag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.core.widget.NestedScrollView>
+            <View
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolBar"
+                tools:ignore="NotSibling" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view_edit_comment"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_date_picker_white"
+                android:elevation="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_commentaire"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_date_picker_white"
+                android:elevation="3dp"
+                android:fontFamily="@font/sfpro_display_light"
+                android:hint="@string/ajouter_un_commentaire"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLength="100"
+                android:padding="10dp"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/view_edit_comment"
+                app:layout_constraintEnd_toStartOf="@id/btn_send_comment"
+                app:layout_constraintStart_toStartOf="@+id/view_edit_comment"
+                app:layout_constraintTop_toTopOf="@+id/view_edit_comment" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_send_comment"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/ic_send_comment"
+                android:elevation="3dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_commentaire"
+                app:layout_constraintEnd_toEndOf="@id/view_edit_comment"
+                app:layout_constraintTop_toTopOf="@+id/edit_commentaire"
+                app:layout_constraintVertical_bias="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

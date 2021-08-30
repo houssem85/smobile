@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@drawable/bg_rectangle_grey_radius"
+    android:layout_marginBottom="10dp">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/ic_destinataire_guest"
+        android:layout_marginEnd="20dp"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lblName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Miguel Albert"
+        android:textColor="#6E788D"
+        android:textSize="18sp"
+        android:minHeight="35dp"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/sfpro_display_light"
+        />
+</androidx.appcompat.widget.LinearLayoutCompat>

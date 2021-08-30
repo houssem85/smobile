@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.infractions.filtre.FiltreViewModel" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dialog"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_filter_vertical" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_ui_display_bold"
+                    android:text="@string/filtre"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:alpha="0.5"
+                android:background="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/sfpro_display_medium"
+                    android:text="@string/Periode"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="22sp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchPeriode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.isPeriodeFilterActive}"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/sfpro_display_light"
+                    android:text="@string/Date_de_debut_"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="22sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/sfpro_display_light"
+                    android:text="@string/Date_de_fin_"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="22sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/view_edit_date_deb"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_sub_menu_edit">
+
+                    <EditText
+                        android:id="@+id/txtDateDebut"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:elevation="3dp"
+                        android:enabled="true"
+                        android:focusable="false"
+                        android:longClickable="false"
+                        android:fontFamily="@font/sfpro_display_light"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:text="@={viewModel.dateDebut}"
+                        />
+                    <ImageView
+                        android:id="@+id/imgCalendarDateDebut"
+                        android:layout_width="56dp"
+                        android:layout_height="match_parent"
+                        android:src="@{viewModel.isPeriodeFilterActive ? @drawable/ic_calendar : @drawable/ic_calendar_grey}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_sub_menu_edit">
+
+                    <EditText
+                        android:id="@+id/txtDateFin"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:elevation="3dp"
+                        android:enabled="true"
+                        android:focusable="false"
+                        android:longClickable="false"
+                        android:fontFamily="@font/sfpro_display_light"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:text="@={viewModel.dateFin}"
+                        />
+                    <ImageView
+                        android:id="@+id/imgCalendarDateFin"
+                        android:layout_width="56dp"
+                        android:layout_height="match_parent"
+                        android:src="@{viewModel.isPeriodeFilterActive ? @drawable/ic_calendar : @drawable/ic_calendar_grey}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/catégories_d_infractions"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/sfpro_display_medium"
+                    android:gravity="center_vertical"
+                    />
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchCategorieInfraction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.isCategorieClassFilterActive}"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/box_checkBoxs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical"
+                >
+                <CheckBox
+                    android:id="@+id/checkbox_class_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/class_4"
+                    android:textSize="18sp"
+                    android:checked="@={viewModel.isCategorieClass4Active}"
+                    />
+                <CheckBox
+                    android:id="@+id/checkbox_class_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/class_5"
+                    android:textSize="18sp"
+                    android:checked="@={viewModel.isCategorieClass5Active}"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <Button
+                android:id="@+id/btnAppliquer"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/appliquer"
+                android:background="@drawable/bg_btn"
+                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

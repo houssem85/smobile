@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.activities.journalier.GraphicalViewViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parentConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.journalier.GraphicalViewActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/centerGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolBar"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorAccent"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:gravity="center"
+                android:text="@string/Graph"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:visibility="visible"
+                app:layout_anchorGravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btnRetour"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="30dp"
+                android:onClick="@{ () -> viewModel.pressBtnBack()}"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/lblTitle"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_back" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sfpro_display_light"
+                    android:gravity="center"
+                    android:text="@string/retour"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="26dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/ic_commentaire_white"
+            android:onClick="@{() -> viewModel.pressBtnShowComments()}"
+            app:layout_constraintBottom_toTopOf="@+id/centerGuideLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:visibility="gone"
+            />
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/mp_barChart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/centerGuideLine" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_date_picker"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_rectangle_blue_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_ui_display_semibold"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:currentDay="@{viewModel.currentDay}"
+                app:layout_constraintBottom_toBottomOf="@id/view_date_picker"
+                app:layout_constraintEnd_toEndOf="@id/view_date_picker"
+                app:layout_constraintStart_toStartOf="@id/view_date_picker"
+                app:layout_constraintTop_toTopOf="@id/view_date_picker"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_precedent_date"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:onClick="@{() -> viewModel.pressBtnPreviousDay()}"
+                android:padding="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back_date" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_next_date"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:onClick="@{() -> viewModel.pressBtnNextDay()}"
+                android:padding="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_next_date" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_cumul"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_cumul_jour_white"
+            android:elevation="3dp"
+            app:layout_constraintBottom_toTopOf="@+id/centerGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_cumul"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="28dp"
+                android:elevation="3dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:src="@drawable/ic_cumulative_day"
+                app:layout_constraintBottom_toBottomOf="@id/view_cumul"
+                app:layout_constraintStart_toStartOf="@id/view_cumul"
+                app:layout_constraintTop_toTopOf="@+id/view_cumul"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_cumul_jour"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:elevation="3dp"
+                android:fontFamily="@font/sfpro_display_light"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/cumul_journ_e"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/view_cumul"
+                app:layout_constraintStart_toEndOf="@id/img_cumul"
+                app:layout_constraintTop_toTopOf="@+id/view_cumul"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_duration"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:elevation="3dp"
+                android:fontFamily="@font/sfpro_display_medium"
+                android:gravity="center"
+                android:text="@string/_5_46"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/view_cumul"
+                app:layout_constraintStart_toEndOf="@id/txt_cumul_jour"
+                app:layout_constraintTop_toTopOf="@+id/view_cumul"
+                app:layout_constraintVertical_bias="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_view_comment"
+            android:elevation="3dp"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/mp_barChart"
+            app:layout_constraintEnd_toStartOf="@+id/verticalGuideline2"
+            app:layout_constraintStart_toEndOf="@+id/verticalGuideline1"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar"
+            app:layout_constraintVertical_bias="0.0"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnHideComments"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="@{() -> viewModel.pressBtnHideComments()}"
+                android:padding="5dp"
+                android:src="@drawable/ic_close_view_comment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_max="200dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnHideComments" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recycleView">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_date_picker_white"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/sfpro_display_light"
+                    android:hint="@string/ajouter_un_commentaire"
+                    android:maxLength="100"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="15sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnSendComment"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
+                    android:elevation="4dp"
+                    android:onClick="@{() -> viewModel.pressBtnSendComment()}"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_send_comment" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_arc_top_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1.4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.gerer_absence.ManageAbsenceFragment">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolBare"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorAccent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnOpenMenu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:gravity="center"
+                android:text="@string/gerer_les_absences"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_anchorGravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_filter"
+                android:layout_marginEnd="25dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/content_top"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/corner_bottom_left"
+                app:layout_constraintBottom_toTopOf="@id/content_manage_absence"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_calendar_equipe"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/bg_calendar"
+                    android:drawableEnd="@drawable/ic_next_screen"
+                    android:fontFamily="@font/sf_ui_display_semibold"
+                    android:gravity="center|start"
+                    android:paddingStart="13dp"
+                    android:paddingEnd="13dp"
+                    android:text="@string/calendrier_d_quipe"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/content_manage_absence"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/content_top">
+
+                <FrameLayout
+                    android:id="@+id/containerTabLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_top_right"
+                    android:clipToPadding="false"
+                    android:paddingStart="30dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="30dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        app:tabGravity="center"
+                        app:tabIndicator="@drawable/bg_indicator"
+                        app:tabIndicatorColor="@color/colorPrimary"
+                        app:tabIndicatorGravity="center"
+                        app:tabIndicatorHeight="30dp"
+                        app:tabMinWidth="80dp"
+                        app:tabMode="scrollable"
+                        app:tabRippleColor="@null"
+                        app:tabSelectedTextColor="#fff"
+                        app:tabTextAppearance="@style/CustomTabText">
+
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tab_a_valider"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/a_valider"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tab_en_attente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/en_attente"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tab_validee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/valid_es"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tab_refusee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/refus_es"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false" />
+
+
+                    </com.google.android.material.tabs.TabLayout>
+                </FrameLayout>
+
+                <fr.strada.smobile.utils.NonSwipeableViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/containerTabLayout" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.activities.journalier.MyDailyActivitiesViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.journalier.MyDailyActivitiesFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_my_daily_activities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                android:fillViewport="true"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:descendantFocusability="blocksDescendants"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/view_month"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/bg_header_calendar_blue_tablette"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_display_medium"
+                            android:gravity="center"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:text=""
+                            android:textColor="@color/colorWhite"
+                            android:textSize="24sp"
+                            app:month="@{viewModel.month}" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:text="@{Integer.toString(viewModel.year)}"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@android:drawable/arrow_down_float" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <RelativeLayout
+                        android:id="@+id/calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/bg_bottom_calendar_blue_tablette"
+                        android:minHeight="215dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_month">
+
+                        <ViewStub
+                            android:id="@+id/stub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inflatedId="@+id/subTree"
+                            android:layout="@layout/expended_calendar" />
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="35dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/sfpro_display_light"
+                        android:text="@string/Mon_activité_de_la_journée"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginEnd="35dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_service"
+                            android:orientation="vertical"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_clock_blue" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:fontFamily="@font/sfpro_display_light"
+                                android:gravity="center"
+                                android:text="@string/service"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/lblService"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_ui_display_bold"
+                                android:gravity="center"
+                                android:text="00:00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15sp"
+                                />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_night"
+                            android:orientation="vertical"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_nuit" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:fontFamily="@font/sfpro_display_light"
+                                android:gravity="center"
+                                android:text="@string/nuit"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_ui_display_bold"
+                                android:gravity="center"
+                                android:text="00:00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15sp"
+                                />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_graph"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/bg_date_picker_white"
+                        android:drawableEnd="@drawable/ic_next_screen"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:gravity="center|start"
+                        android:paddingStart="13dp"
+                        android:paddingEnd="13dp"
+                        android:text="@string/vue_graphique"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        />
+
+                    <View
+                        android:layout_width="170dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:alpha="0.5"
+                        android:background="@color/colorPrimary" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_type_activite"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/seravek_light"
+                            android:gravity="center"
+                            android:text="@string/type"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_debut"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/seravek_light"
+                            android:gravity="center"
+                            android:text="@string/heure_d_but"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_fin"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/seravek_light"
+                            android:gravity="center"
+                            android:text="@string/heure_fin"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_duration"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/seravek_light"
+                            android:gravity="center"
+                            android:text="@string/duree"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycleView_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:focusable="false" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

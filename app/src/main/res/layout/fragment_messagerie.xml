@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.messagerie.MessagerieViewModel" />
+    </data>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.messagerie.MessagerieFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:background="@drawable/corner_bottom_left"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnOpenMenu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:onClick="@{() -> viewModel.pressBtnOpenMenu()}"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintEnd_toStartOf="@+id/appCompatTextView2"
+                app:layout_constraintHorizontal_bias="0.011"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:gravity="center"
+                android:text="@string/messagerie"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_anchorGravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_add_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:foregroundGravity="center"
+                android:onClick="@{() -> viewModel.pressBtnAddMessage()}"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/appCompatTextView2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_add_absence" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/content_messagerie"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/content_top">
+
+                <FrameLayout
+                    android:id="@+id/containerTabLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_top_right"
+                    android:clipToPadding="false"
+                    android:paddingStart="30dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="30dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout_messagerie"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        app:tabGravity="center"
+                        app:tabIndicator="@drawable/bg_indicator"
+                        app:tabIndicatorColor="@color/colorPrimary"
+                        app:tabIndicatorGravity="center"
+                        app:tabIndicatorHeight="30dp"
+                        app:tabMode="fixed"
+                        app:tabRippleColor="@null"
+                        app:tabSelectedTextColor="#fff"
+                        app:tabTextAppearance="@style/CustomTabText"/>
+                </FrameLayout>
+
+                <fr.strada.smobile.utils.NonSwipeableViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/containerTabLayout"
+                    app:layout_constraintVertical_bias="1.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/content_top"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/corner_bottom_left"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/content_messagerie"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_filtre_messagerie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="70dp"
+        android:elevation="7dp"
+        android:visibility="visible"
+        android:background="@drawable/bg_date_picker_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_filtre_message"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@null"
+            android:enabled="true"
+            android:focusable="false"
+            android:fontFamily="@font/sfpro_display_medium"
+            android:gravity="center_vertical"
+            android:hint="@string/Tous"
+            android:inputType="text"
+            android:longClickable="false"
+            android:onClick="@{() -> viewModel.pressBtnOpenFiltreMessage()}"
+            android:paddingStart="15dp"
+            android:text="@string/Tous"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_expand_filtre"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_filtre_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_filtre_expand"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_filtre_message">
+
+            <View
+                android:id="@+id/view_cc"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:alpha="0.5"
+                android:background="@color/colorBordureGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view_edit_type"
+                tools:ignore="NotSibling" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_tous"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/sfpro_display_medium"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.pressTxtFiltreTous()}"
+                android:text="@string/Tous"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_tous"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:alpha="0.5"
+                android:background="@color/colorBordureGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tous" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_message_lu"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/sfpro_display_medium"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.pressTxtFiltreMessageLu()}"
+                android:text="@string/message_lu"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_tous" />
+
+            <View
+                android:id="@+id/view_message_lu"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:alpha="0.5"
+                android:background="@color/colorBordureGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_message_lu" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_message_non_lu"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/sfpro_display_medium"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.pressTxtFiltreMessageNonLu()}"
+                android:text="@string/Message_non_lu"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_message_lu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+</layout>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.profil.ProfilViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".ui_tablette.pointeuse.PointeuseTabletteFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolBar"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:gravity="center"
+                android:text="@string/profil"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:visibility="visible"
+                app:layout_anchorGravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayoutCompat2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gu1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.30"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gu2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.70"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gu3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="1.0"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_profile_tablette" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nameEmployee"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sf_ui_display_semibold"
+                    android:gravity="center"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/imgProfile"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/matricule"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Matricule_"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/nameEmployee"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/sf_ui_display_semibold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="15dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblMatricule"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/sfpro_display_medium"
+                    android:textColor="#8B92A0"
+                    android:background="@drawable/bg_rectangle_grey_radius"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_marginBottom="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/matricule"
+                    android:layout_marginTop="15dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Nom_"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/sf_ui_display_semibold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/lblMatricule"
+                    android:layout_marginTop="25dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblNom"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/sfpro_display_medium"
+                    android:textColor="#8B92A0"
+                    android:background="@drawable/bg_rectangle_grey_radius"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_marginBottom="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/nom"
+                    android:layout_marginTop="15dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/prenom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Prénom_"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/sf_ui_display_semibold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/lblNom"
+                    android:layout_marginTop="25dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblPrenom"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/sfpro_display_medium"
+                    android:textColor="#8B92A0"
+                    android:background="@drawable/bg_rectangle_grey_radius"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_marginBottom="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/prenom"
+                    android:layout_marginTop="15dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/date_naissance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Date_de_naissance_"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/sf_ui_display_semibold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/lblPrenom"
+                    android:layout_marginTop="25dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblDateNaissance"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/sfpro_display_medium"
+                    android:textColor="#8B92A0"
+                    android:background="@drawable/bg_rectangle_grey_radius"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/date_naissance"
+                    android:layout_marginTop="15dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_btn_cancel"
+                    android:fontFamily="@font/sfro_display_regular"
+                    android:text="@string/Se_déconnecter"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginBottom="40dp"
+                    android:textSize="20sp"
+                    android:layout_marginTop="60dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/gu2"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="@+id/gu1"
+                    app:layout_constraintTop_toBottomOf="@id/lblDateNaissance"
+                    android:onClick="@{() -> viewModel.pressBtnSeDeconnecter()}"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/bottomHeader"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_arc_top_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBar"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

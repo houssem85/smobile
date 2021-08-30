@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.demande_absence.AbsenceRequestViewModel" />
+    </data>
+
+<FrameLayout
+    android:id="@+id/frame_demande_absence"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".ui.demande_absence.AbsenceRequestFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/corner_bottom_left"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnOpenMenu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_menu"
+                android:onClick="@{() -> viewModel.pressBtnOpenMenu()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:gravity="center"
+                android:text="@string/demande_d_absence"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_anchorGravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/contentAbsence">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:text="@string/type_d_absence"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view_edit_type"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/view_edit_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="21dp"
+                        android:background="@drawable/bg_sub_menu_edit"
+                        app:layout_constraintBottom_toTopOf="@+id/layout_error_type_absence"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.455"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_type">
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edit_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:background="@null"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:fontFamily="@font/sfpro_display_light"
+                            android:hint="@string/choisir_votre_type_d_absence"
+                            android:inputType="text"
+                            android:longClickable="false"
+                            android:paddingStart="15dp"
+                            android:textSize="15sp"
+                            android:text="@={viewModel.typeAbsence}"
+                            android:onClick="@{() -> viewModel.pressBtnSelectTypeAbsence()}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/menu_myadmin_expand"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_expand"
+                            android:layout_width="45dp"
+                            android:layout_height="match_parent"
+                            android:padding="16dp"
+                            android:src="@drawable/ic_arrow_down"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/menu_myadmin_expand"
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/img_expand">
+
+                            <View
+                                android:id="@+id/view_cc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="5dp"
+                                android:alpha="0.5"
+                                android:background="@color/colorBordureGray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/view_edit_type"
+                                tools:ignore="NotSibling" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txt_conge"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text="@string/cong_pay"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="13sp"
+                                android:onClick="@{() -> viewModel.selectConge()}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+
+                            <View
+                                android:id="@+id/view_conge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="5dp"
+                                android:alpha="0.5"
+                                android:background="@color/colorBordureGray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txt_conge" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txt_recuperation"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text="@string/r_cup_ration"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="13sp"
+                                android:onClick="@{() -> viewModel.selectRecuperation()}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/view_conge" />
+
+                            <View
+                                android:id="@+id/view_recuperation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="5dp"
+                                android:alpha="0.5"
+                                android:background="@color/colorBordureGray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txt_recuperation" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txt_repos"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text="@string/repos_compensateur"
+                                android:onClick="@{() -> viewModel.selectReposCompensateur()}"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="13sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/view_recuperation" />
+
+                            <View
+                                android:id="@+id/view_repos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="5dp"
+                                android:alpha="0.5"
+                                android:background="@color/colorBordureGray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txt_repos" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txt_repos_replacement"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text="@string/repos_compensateur_remplacement"
+                                android:onClick="@{() -> viewModel.selectReposCompensateurRemplacement()}"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="13sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/view_repos" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_date_fin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:text="@string/date_de_fin"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/layout_error" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/view_edit_date_fin"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="21dp"
+                        android:background="@drawable/bg_sub_menu_edit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.455"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_date_fin">
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edit_date_fin"
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:background="@null"
+                            android:elevation="3dp"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:fontFamily="@font/sfpro_display_light"
+                            android:inputType="text"
+                            android:longClickable="false"
+                            android:paddingStart="15dp"
+                            android:textSize="15sp"
+                            android:onClick="@{() -> viewModel.pressBtnSelectDateFin()}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/img_calendar_end"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_calendar_end"
+                            android:layout_width="45dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_calendar"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_error_type_absence"
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:orientation="horizontal"
+                        android:visibility="@{viewModel.layoutErrorTypeAbsence}"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="30dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.455"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_edit_type">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/exclamation_point_red" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:fontFamily="@font/sfro_display_regular"
+                            android:text="@string/il_faut_choisir_le_type_de_votre_absence"
+                            android:layout_marginStart="5dp"
+                            android:textSize="13sp"
+                            android:textColor="@color/colorRedError"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_date_deb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:text="@string/date_de_d_but"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/layout_error_type_absence" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/view_edit_date_deb"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/bg_sub_menu_edit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.455"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_date_deb">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edit_date_deb"
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:background="@null"
+                            android:elevation="3dp"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:fontFamily="@font/sfpro_display_light"
+                            android:longClickable="false"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="0dp"
+                            android:textSize="15sp"
+                            android:onClick="@{() -> viewModel.pressBtnSelectDateDebut()}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/img_calendar_start"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_calendar_start"
+                            android:layout_width="45dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_calendar"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_error"
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:orientation="horizontal"
+                        android:visibility="@{viewModel.layoutErrorDateDeb}"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="30dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.455"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_edit_date_deb">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/exclamation_point_red" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:fontFamily="@font/sfro_display_regular"
+                            android:text="@string/il_faut_choisir_la_date_de_debut_de_votre_conge"
+                            android:layout_marginStart="5dp"
+                            android:textSize="13sp"
+                            android:textColor="@color/colorRedError"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_drt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:text="@string/dur_e"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_edit_date_fin" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="32dp"
+                        android:background="@drawable/bg_gray"
+                        android:fontFamily="@font/sfpro_display_medium"
+                        android:gravity="center"
+                        android:text="@{viewModel.duration}"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_drt" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:text="@string/votre_commentaire"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_duration" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:fontFamily="@font/sfpro_display_light"
+                        android:textColor="@color/colorAccent"
+                        android:hint="@string/ecrivez_votre_commentaire_ici"
+                        android:maxLength="100"
+                        android:paddingStart="15dp"
+                        android:paddingTop="10dp"
+                        android:textSize="15sp"
+                        android:gravity="top"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="32dp"
+                        android:background="@drawable/bg_edit_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_comment" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_validate"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_dark_gray"
+                        android:fontFamily="@font/sfpro_display_medium"
+                        android:text="@string/valider"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:onClick="@{() -> viewModel.pressBtnValider()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edt_comment"
+                        app:layout_constraintVertical_bias="0.172" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+            <eightbitlab.com.blurview.BlurView
+                android:id="@+id/blurView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </eightbitlab.com.blurview.BlurView>
+
+            <View
+                android:id="@+id/bottomHeader"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_arc_top_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolBar"
+                tools:ignore="NotSibling" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>
+</layout>

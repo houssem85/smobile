@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.mes_frais.MesFraisViewModel" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.messagerie.MessagerieFragment">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="90dp"
+            >
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                app:chipSpacingHorizontal="16dp"
+                app:singleLine="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_1"
+                    style="@style/Widget.MaterialComponents.Chip.Entry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="false"
+                    android:text="@string/Tous"
+                    app:chipSurfaceColor="#DDE8FF"
+                    app:closeIconTint="@color/backgroundColor" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_2"
+                    style="@style/Widget.MaterialComponents.Chip.Entry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="false"
+                    android:text="TEST "
+                    android:visibility="gone"
+                    app:chipSurfaceColor="#DDE8FF"
+                    app:closeIconTint="@color/backgroundColor" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_3"
+                    style="@style/Widget.MaterialComponents.Chip.Entry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="false"
+                    android:text="TEST "
+                    android:visibility="gone"
+                    app:chipSurfaceColor="#DDE8FF"
+                    app:closeIconTint="@color/backgroundColor" />
+
+            </com.google.android.material.chip.ChipGroup>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_mes_frais"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                tools:listitem="@layout/item_mes_frais"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/view_top_mes_frais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_recherche"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_date_picker_white"
+                android:drawableStart="@drawable/ic_searsh"
+                android:elevation="4dp"
+                android:fontFamily="@font/sfpro_display_light"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:longClickable="false"
+                android:hint="@string/recherche"
+                android:textColor="@color/darkGray"
+                android:textSize="16sp"
+                android:visibility="visible"
+                android:text="@={viewModel.strSearch}"
+                android:imeOptions="actionSearch"
+                android:layout_margin="4dp"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btn_filtre"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="0"
+                android:background="@drawable/bg_date_picker_white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_margin="4dp"
+                android:elevation="4dp"
+                >
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_filtre_blue" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
+</layout>

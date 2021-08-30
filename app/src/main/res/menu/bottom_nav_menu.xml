@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home_spi"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/accueil" />
+    <item
+        android:id="@+id/pointeuseFragment"
+        android:icon="@drawable/ic_time_clock_menu"
+        android:title="@string/pointeuse" />
+
+    <item
+        android:id="@+id/navigation_doc"
+        android:icon="@drawable/ic_folder_open_24"
+        android:title="@string/mes_documents" />
+
+    <item
+        android:id="@+id/navigation_menu"
+        android:icon="@drawable/ic_baseline_menu_24"
+        android:title="@string/menu" />
+
+</menu>

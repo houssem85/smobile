@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home_spi">
+
+    <fragment
+        android:id="@+id/navigation_home_spi"
+        android:name="fr.strada.smobile.ui.spi.ui.home.HomeSpiFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/home_spi_fragment" >
+        <action
+            android:id="@+id/action_navigation_home_spi_to_listNotificationFragment2"
+            app:destination="@id/listNotificationFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_doc"
+        android:name="fr.strada.smobile.ui.spi.ui.doc.DocFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/doc_fragment" >
+        <action
+            android:id="@+id/action_navigation_doc_to_ajoutDocFragment"
+            app:destination="@id/ajoutDocFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pointeuseFragment"
+        android:name="fr.strada.smobile.ui.pointeuse.PointeuseFragment"
+        tools:layout="@layout/fragment_pointeuse" />
+
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="fr.strada.smobile.ui.spi.ui.menu.MenuFragment"
+        tools:layout="@layout/menu_fragment" >
+        <action
+            android:id="@+id/action_navigation_menu_to_listTournerFragment"
+            app:destination="@id/listTournerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilFragment2"
+        android:name="fr.strada.smobile.ui.profil.ProfilFragment"
+        android:label="ProfilFragment"
+        tools:layout="@layout/fragment_profil"/>
+    <fragment
+        android:id="@+id/AProposFragment2"
+        android:name="fr.strada.smobile.ui.apropos.AProposFragment"
+        android:label="AProposFragment"
+        tools:layout="@layout/fragment_a_propos"
+        />
+    <action
+        android:id="@+id/action_global_profilFragment2"
+        app:destination="@id/profilFragment2"
+        app:popUpTo="@id/navigation_home_spi"
+        app:popUpToInclusive="false" />
+    <action
+        android:id="@+id/action_global_AProposFragment2"
+        app:destination="@id/AProposFragment2"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_navigation_home_spi"
+        app:destination="@id/navigation_home_spi" />
+    <fragment
+        android:id="@+id/ajoutDocFragment"
+        android:name="fr.strada.smobile.ui.spi.ui.doc.AjoutDocFragment"
+        android:label="fragment_ajout_doc"
+        tools:layout="@layout/fragment_ajout_doc" />
+    <fragment
+        android:id="@+id/listTournerFragment"
+        android:name="fr.strada.smobile.ui.spi.ui.tms.ListTournerFragment"
+        android:label="fragment_list_tourner"
+        tools:layout="@layout/fragment_list_tourner" >
+        <action
+            android:id="@+id/action_listTournerFragment_to_detailTourneeFragment"
+            app:destination="@id/detailTourneeFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/listNotificationFragment2"
+        android:name="fr.strada.smobile.ui.spi.ui.tms.ListNotificationFragment"
+        android:label="fragment_list_notification"
+        tools:layout="@layout/fragment_list_notification" >
+        <action
+            android:id="@+id/action_listNotificationFragment2_to_detailTourneeFragment"
+            app:destination="@id/detailTourneeFragment" />
+        <argument
+            android:name="idTournee"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTourneeFragment"
+        android:name="fr.strada.smobile.ui.spi.ui.tms.DetailTourneeFragment"
+        android:label="fragment_detail_tournee"
+        tools:layout="@layout/fragment_detail_tournee" >
+        <action
+            android:id="@+id/action_detailTourneeFragment_to_mainInformationFragment"
+            app:destination="@id/mainInformationFragment" />
+        <argument
+            android:name="idTournee"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainInformationFragment"
+        android:name="fr.strada.smobile.ui.spi.ui.tms.information.MainInformationFragment"
+        android:label="fragment_main_information"
+        tools:layout="@layout/fragment_main_information" />
+    <fragment
+        android:id="@+id/runFragment"
+        android:name="fr.strada.smobile.ui.spi.tracker.RunFragment"
+        android:label="RunFragment" />
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="fr.strada.smobile.ui.spi.tracker.TrackingFragment"
+        android:label="TrackingFragment" />
+    <action
+        android:id="@+id/action_global_runFragment"
+        app:destination="@id/runFragment" />
+    <action
+        android:id="@+id/action_global_trackingFragment"
+        app:destination="@id/trackingFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="fr.strada.smobile.ui.spi.ui.reglage.SettingsFragment"
+        android:label="SettingsFragment" />
+    <action
+        android:id="@+id/action_global_settingsFragment"
+        app:destination="@id/settingsFragment" />
+</navigation>

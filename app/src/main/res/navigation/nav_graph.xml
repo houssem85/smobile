@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/pointeuseFragment"
+        android:name="fr.strada.smobile.ui.pointeuse.PointeuseFragment"
+        android:label="fragment_pointeuse"
+        tools:layout="@layout/fragment_pointeuse"
+        >
+        <argument
+            android:name="IS_MENU_TYPE_ACTIVITIE_POINTEUSE_OPNED"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="fr.strada.smobile.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_homeFragment_to_mesActivitiesFragment"
+            app:destination="@id/mesActivitiesFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/mesActivitiesFragment"
+        android:name="fr.strada.smobile.ui.activities.MesActivitiesFragment"
+        android:label="MesActivitiesFragment"
+        tools:layout="@layout/fragment_activities"
+        />
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="fr.strada.smobile.ui.profil.ProfilFragment"
+        android:label="ProfilFragment"
+        tools:layout="@layout/fragment_profil"
+        />
+    <fragment
+        android:id="@+id/AProposFragment"
+        android:name="fr.strada.smobile.ui.apropos.AProposFragment"
+        android:label="AProposFragment"
+        tools:layout="@layout/fragment_a_propos"
+        />
+    <fragment
+        android:id="@+id/infractionsFragment"
+        android:name="fr.strada.smobile.ui.infractions.InfractionsFragment"
+        android:label="InfractionsFragment"
+        tools:layout="@layout/fragment_infractions"
+        >
+        <action
+            android:id="@+id/action_infractionsFragment_to_detailInfractionFragment"
+            app:destination="@id/detailInfractionFragment"
+            />
+    </fragment>
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true"
+        />
+    <action
+        android:id="@+id/action_global_profilFragment"
+        app:destination="@id/profilFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false"
+        />
+    <action
+        android:id="@+id/action_global_mesActivitiesFragment"
+        app:destination="@id/mesActivitiesFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false"
+        >
+        <argument
+            android:name="year"
+            app:argType="integer"
+            />
+        <argument
+            android:name="month"
+            app:argType="integer"
+            />
+        <argument
+            android:name="week"
+            app:argType="integer"
+            />
+    </action>
+    <action
+        android:id="@+id/action_global_AProposFragment"
+        app:destination="@id/AProposFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false"
+        />
+    <action
+        android:id="@+id/action_global_pointeuseFragment"
+        app:destination="@id/pointeuseFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false"
+        />
+    <action
+        android:id="@+id/action_global_infractionsFragment"
+        app:destination="@id/infractionsFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false"
+        />
+    <fragment
+        android:id="@+id/detailInfractionFragment"
+        android:name="fr.strada.smobile.ui.infractions.detail_infraction.DetailInfractionFragment"
+        android:label="DetailInfractionFragment"
+        tools:layout="@layout/fragment_detail_infraction">
+        <argument
+            android:name="infraction"
+            app:argType="fr.strada.smobile.data.models.infractions.Infraction"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/indemnitesFragment"
+        android:name="fr.strada.smobile.ui.indemnites.IndemnitesFragment"
+        android:label="IndemnitesFragment"
+        tools:layout="@layout/fragment_indemnites" />
+    <action
+        android:id="@+id/action_global_indemnitesFragment"
+        app:destination="@id/indemnitesFragment"
+        app:popUpToInclusive="false">
+        <argument
+            android:name="year"
+            app:argType="integer" />
+        <argument
+            android:name="month"
+            app:argType="integer" />
+        <argument
+            android:name="week"
+            app:argType="integer" />
+    </action>
+    <fragment
+        android:id="@+id/mesFraisFragment"
+        android:name="fr.strada.smobile.ui.mes_frais.MesFraisFragment"
+        android:label="MesFraisFragment"
+        tools:layout="@layout/fragment_mes_frais" >
+        <action
+            android:id="@+id/action_mesFraisFragment_to_detailDemandeEnvoyeeFragment"
+            app:destination="@id/detailDemandeEnvoyeeFragment" />
+        <action
+            android:id="@+id/action_mesFraisFragment_to_detailDemandeNonEnvoyeeFragment"
+            app:destination="@id/detailDemandeNonEnvoyeeFragment" />
+        <action
+            android:id="@+id/action_mesFraisFragment_to_nouvelleDemandeFragment"
+            app:destination="@id/nouvelleDemandeFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_mesFraisFragment"
+        app:destination="@id/mesFraisFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false" />
+    <fragment
+        android:id="@+id/detailDemandeEnvoyeeFragment"
+        android:name="fr.strada.smobile.ui.mes_frais.detail_demande_envoyee.DetailDemandeEnvoyeeFragment"
+        android:label="DetailDemandeEnvoyeeFragment"
+        tools:layout="@layout/fragment_detail_demande_envoyee">
+        <argument
+            android:name="noteFrais"
+            app:argType="fr.strada.smobile.data.models.mes_frais.NoteFrais" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailDemandeNonEnvoyeeFragment"
+        android:name="fr.strada.smobile.ui.mes_frais.detail_demande_non_envoyee.DetailDemandeNonEnvoyeeFragment"
+        android:label="DetailDemandeNonEnvoyeeFragment"
+        tools:layout="@layout/fragment_detail_demande_non_envoyee">
+        <argument
+            android:name="noteFrais"
+            app:argType="fr.strada.smobile.data.models.mes_frais.NoteFrais" />
+        <action
+            android:id="@+id/action_detailDemandeNonEnvoyeeFragment_to_nouvelleDepenseFragment"
+            app:destination="@id/nouvelleDepenseFragment" />
+        <action
+            android:id="@+id/action_detailDemandeNonEnvoyeeFragment_to_detailDepenseFragment"
+            app:destination="@id/detailDepenseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nouvelleDemandeFragment"
+        android:name="fr.strada.smobile.ui.mes_frais.nouvelle_demande.NouvelleDemandeFragment"
+        android:label="NouvelleDemandeFragment"
+        tools:layout="@layout/fragment_nouvelle_demande">
+        <action
+            android:id="@+id/action_nouvelleDemandeFragment_to_nouvelleDepenseFragment"
+            app:destination="@id/nouvelleDepenseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nouvelleDepenseFragment"
+        android:name="fr.strada.smobile.ui.mes_frais.nouvelle_depense.NouvelleDepenseFragment"
+        android:label="NouvelleDepenseFragment"
+        tools:layout="@layout/fragment_nouvelle_depense" />
+    <fragment
+        android:id="@+id/detailDepenseFragment"
+        android:name="fr.strada.smobile.ui.mes_frais.detail_depense.DetailDepenseFragment"
+        android:label="DetailDepenseFragment"
+        tools:layout="@layout/fragment_detail_depense">
+        <argument
+            android:name="updateDepense"
+            app:argType="fr.strada.smobile.data.models.mes_frais.UpdateDepense" />
+    </fragment>
+    <fragment
+        android:id="@+id/reglageFragment"
+        android:name="fr.strada.smobile.ui.reglage.ReglageFragment"
+        android:label="ReglageFragment" />
+    <action
+        android:id="@+id/action_global_reglageFragment"
+        app:destination="@id/reglageFragment" />
+</navigation>

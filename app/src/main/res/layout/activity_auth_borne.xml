@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+            <variable
+                name="viewModel"
+                type="fr.strada.smobile.ui.auth.borne.AuthBorneViewModel" />
+
+
+    </data>
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/backgroundColor"
+                android:backgroundTint="@color/backgroundColor"
+                tools:context=".ui.auth.borne.AuthBorne"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView11logoborne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="120dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/logo_strada"
+                    />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/materialCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/bg_bottom_sheet"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView11logoborne">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textView14"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/sf_ui_display_bold"
+                            android:text="@string/pour_vous_identifier"
+                            android:textColor="@color/backgroundColor"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toTopOf="@+id/textView20"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="24dp"
+                            android:fontFamily="@font/sfpro_display_medium"
+                            android:text="@string/saisissez_vos_nom_et_code_confidentiel_ou_ins_rez_votre_carte_dans_le_lecteur"
+                            android:textColor="@color/backgroundColor"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textView18"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="24dp"
+                            android:text="@string/Nom_"
+                            android:textColor="@color/backgroundColor"
+                            app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="16dp"
+                            android:nextFocusForward="@id/textInputLayout2"
+                            android:textColorHint="@color/backgroundColor"
+                            app:boxBackgroundMode="outline"
+                            app:boxStrokeColor="@color/backgroundColor"
+                            app:boxStrokeWidth="2dp"
+                            app:endIconMode="clear_text"
+                            app:helperTextEnabled="false"
+                            app:layout_constraintBottom_toTopOf="@+id/textView23"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/input_nom_authmodeborne"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:completionThreshold="1"
+                                android:dropDownHeight="wrap_content"
+                                android:focusable="auto"
+                                android:fontFamily="@font/sf_ui_display_semibold"
+                                android:inputType="textPersonName|text"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                android:textColor="@color/backgroundColor" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="24dp"
+                            android:text="@string/code_confidentielle"
+                            android:textColor="@color/backgroundColor"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout2"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="24dp"
+                            android:textColorHint="@color/backgroundColor"
+                            app:boxBackgroundMode="outline"
+                            app:boxStrokeColor="@color/backgroundColor"
+                            app:boxStrokeWidth="2dp"
+                            app:endIconMode="password_toggle"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView23">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inpute_code_modeborne"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberPassword" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Button
+                            android:id="@+id/btn_auth_borne"
+                            android:layout_width="0dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="32dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="32dp"
+                            android:onClick="@{() -> viewModel.pressBtnSeconnecter()}"
+                            android:text="@string/acc_der_mon_espace_personnel"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

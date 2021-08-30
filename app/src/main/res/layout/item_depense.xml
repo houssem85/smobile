@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mobile.sarproj.com.layout.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:draggedItem="@id/drag_item"
+    app:rightItem="@id/right_view"
+    app:swipeDirection="left"
+    android:background="@drawable/bg_item_depense"
+    >
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/right_view"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="3dp"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#2E3D90"
+            app:srcCompat="@drawable/ic_justification_depense"
+            android:padding="20dp"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_delete_red"
+            app:srcCompat="@drawable/ic_delete_white"
+            android:padding="20dp"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <FrameLayout
+        android:id="@+id/drag_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:layout_margin="2dp"
+            app:cardCornerRadius="8dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblDayDepense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vendredi 24 avril"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/sfpro_display_light"
+                    android:textSize="12sp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginStart="68dp"
+                    />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="7dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/colorAccent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgType"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_hotel" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_ui_display_semibold"
+                            android:text="Hotel"
+                            android:textColor="#000000"
+                            android:textSize="13sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgComment"
+                        android:layout_width="15dp"
+                        android:layout_height="13dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_comm_blue" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgFileJoined"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_attachement"
+                        android:visibility="invisible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblMontant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:ellipsize="end"
+                        android:maxWidth="70dp"
+                        android:maxLines="1"
+                        android:text="122,50€"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_next_screen" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</mobile.sarproj.com.layout.SwipeLayout>

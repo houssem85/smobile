@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.gerer_absence.calendrier_equipe.CalendrierEquipeViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".ui.gerer_absence.calendrier_equipe.CalendrierEquipeFragment">
+
+        <LinearLayout
+            android:id="@+id/layout_my_daily_activities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:fillViewport="true"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:descendantFocusability="blocksDescendants"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/view_month_calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/bg_header_calendar_blue_tablette"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_month_calendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_display_medium"
+                            android:gravity="center"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:text=""
+                            android:textColor="@color/colorWhite"
+                            android:textSize="22sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_year_calendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/flechView"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@android:drawable/arrow_down_float"
+                            android:visibility="visible" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/bg_bottom_calendar_blue_tablette"
+                        android:minHeight="250dp"
+                        android:orientation="vertical">
+
+                        <com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar
+                            android:id="@+id/calendarView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/colorPrimary"
+                            android:minHeight="215dp"
+                            app:buttonLeft_drawableTintColor="@android:color/white"
+                            app:buttonRight_drawableTintColor="@android:color/white"
+                            app:eventColor="@android:color/white"
+                            app:isCollapsible="false"
+                            app:isShowSeparator="false"
+                            app:primaryColor="@color/colorPrimary"
+                            app:state="expanded"
+                            app:textColor="@android:color/white"
+                            app:todayItem_background="@drawable/bg_circle_white"
+                            app:todayItem_textColor="@color/colorAccent" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/bottom_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/top_layout">
+
+                        <FrameLayout
+                            android:id="@+id/containerTabLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:paddingStart="30dp"
+                            android:paddingTop="15dp"
+                            android:paddingEnd="30dp"
+                            android:paddingBottom="15dp">
+
+                            <com.google.android.material.tabs.TabLayout
+                                android:id="@+id/tabLayoutCalendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                app:tabGravity="center"
+                                app:tabIndicator="@drawable/bg_indicator"
+                                app:tabIndicatorColor="@color/colorPrimary"
+                                app:tabIndicatorGravity="center"
+                                app:tabIndicatorHeight="30dp"
+                                app:tabMinWidth="100dp"
+                                app:tabMode="auto"
+                                app:tabRippleColor="@null"
+                                app:tabSelectedTextColor="#fff"
+                                app:tabTextAppearance="@style/CustomTabTextTablette" />
+                        </FrameLayout>
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/viewPagerCalendar"
+                            android:layout_width="match_parent"
+                            android:layout_height="252dp"
+                            android:background="@android:color/white" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

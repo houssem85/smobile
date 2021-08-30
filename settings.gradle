@@ -1,0 +1,2 @@
+include ':app', ':collapsiblecalendarview' , ':SideMenuView'
+rootProject.name='SMobile'

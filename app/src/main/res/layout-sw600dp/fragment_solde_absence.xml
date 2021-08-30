@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.strada.smobile.ui.soldeabsence.SoldeAbsenceViewModel" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="20dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/view_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_header_calendar_blue_tablette"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfpro_display_medium"
+                        android:gravity="center"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text=""
+                        android:textColor="@color/colorWhite"
+                        android:textSize="25sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="13sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_down"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@android:drawable/arrow_down_float"
+                        android:visibility="invisible" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_bottom_calendar_blue_tablette"
+                    android:minHeight="215dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_month">
+
+                    <ViewStub
+                        android:id="@+id/stub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inflatedId="@+id/subTree"
+                        android:layout="@layout/expended_calendar_without_separator" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/layout_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+                android:layout_marginTop="30dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/solde"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/bg_btn_solde_white"
+                        android:elevation="4dp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_solde_absence"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@null"
+                            android:elevation="4dp"
+                            android:fontFamily="@font/sf_ui_display_semibold"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:text="@string/solde_absence"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toTopOf="@+id/menu_solde"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_expand"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:padding="17dp"
+                            android:src="@drawable/ic_arrow_down"
+                            app:layout_constraintBottom_toTopOf="@id/menu_solde"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/menu_solde"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_solde_bluesky"
+                            android:elevation="4dp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/img_expand">
+
+
+                            <com.google.android.material.tabs.TabLayout
+                                android:id="@+id/tabLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="25dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tabGravity="fill"
+                                app:tabIndicator="@drawable/bg_indicator"
+                                app:tabIndicatorColor="@color/colorWhite"
+                                app:tabIndicatorGravity="center"
+                                app:tabIndicatorHeight="30dp"
+                                app:tabMinWidth="100dp"
+                                app:tabMode="fixed"
+                                app:tabRippleColor="@null"
+                                app:tabSelectedTextColor="@color/blueSkyy"
+                                app:tabTextAppearance="@style/CustomTabbbTextTablette">
+
+                                <com.google.android.material.tabs.TabItem
+                                    android:id="@+id/tab_a_valider"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cp"
+                                    android:textAlignment="textStart"
+                                    android:textAllCaps="false" />
+
+                                <com.google.android.material.tabs.TabItem
+                                    android:id="@+id/tab_en_attente"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rc"
+                                    android:textAlignment="textStart"
+                                    android:textAllCaps="false" />
+
+                                <com.google.android.material.tabs.TabItem
+                                    android:id="@+id/tab_validee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/r"
+                                    android:textAlignment="textStart"
+                                    android:textAllCaps="false" />
+
+                                <com.google.android.material.tabs.TabItem
+                                    android:id="@+id/tab_refusee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rcr"
+                                    android:textAlignment="textStart"
+                                    android:textAllCaps="false" />
+
+
+                            </com.google.android.material.tabs.TabLayout>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txt_s"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/sf_ui_display_semibold"
+                                android:text="@string/votre_solde_est"
+                                android:textColor="@android:color/white"
+                                android:textSize="20sp"
+                                app:layout_constraintBottom_toTopOf="@+id/config_solde"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tabLayout"></androidx.appcompat.widget.AppCompatTextView>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/config_solde"
+                                android:layout_width="match_parent"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/bg_date_picker_white"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/txt_s">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txt_ac"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:fontFamily="@font/sf_ui_display_semibold"
+                                    android:text="@string/acquis"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/txt_solde_acquis"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txt_solde_acquis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sf_ui_display_semibold"
+                                    android:paddingStart="5dp"
+                                    android:text="19.00"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/txt_ac"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txt_prix"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sf_ui_display_semibold"
+                                    android:text="@string/pris"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@id/txt_solde_pris"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_chainStyle="packed" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txt_solde_pris"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sf_ui_display_semibold"
+                                    android:paddingStart="5dp"
+                                    android:text="15.00"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_chainStyle="packed" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txt_attente"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sf_ui_display_semibold"
+                                    android:text="@string/en_attente"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/txt_solde_attente"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.5" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txt_solde_attente"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="15dp"
+                                    android:fontFamily="@font/sf_ui_display_semibold"
+                                    android:paddingStart="5dp"
+                                    android:text="00.00"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <View
+                        android:id="@+id/view_line"
+                        android:layout_width="170dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:alpha="0.5"
+                        android:background="@color/colorPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/solde"></View>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_demande_abs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:text="@string/demande_d_absence_en_cours"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_nbr_abs"
+                        android:layout_width="0dp"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="5dp"
+                        android:text="(3)"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/txt_demande_abs"
+                        app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_solde"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_demande_abs"
+                        tools:listitem="@layout/item_absence_inprogress" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/view_historique"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/bg_btn_solde_white"
+                        android:elevation="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/recycler_solde">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_historique"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:background="@null"
+                            android:elevation="4dp"
+                            android:fontFamily="@font/sf_ui_display_semibold"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:text="@string/historique_d_absences"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_next_screen"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="20dp"
+                            android:src="@drawable/ic_next_screen"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

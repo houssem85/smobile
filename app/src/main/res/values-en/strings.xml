@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="state_connect_card_reader">Connect the card reader</string>
+    <string name="state_grant_usb_device">Authorize the use of the USB tool</string>
+    <string name="state_grant_refused">Authorization request refused</string>
+    <string name="state_insert_driver_card">Insert the driver card into the reader</string>
+    <string name="state_reading">Card reading in progress</string>
+    <string name="state_use_driver_card">The inserted card is incompatible !! Please remove it</string>
+    <string name="state_remove_driver_card">Remove the card from the reader!</string>
+
+    <string name="loader_title">Loading</string>
+    <string name="loader_message">Please wait…</string>
+
+    <string name="lecture_termine">Reading Completed</string>
+    <string name="d_tection_d_une_nouvelle_carte">New card detection</string>
+    <string name="card_no_detected">we have detected that you have inserted a new card whose card number does not match</string>
+    <string name="arr_ter_la_lecture">stop reading</string>
+    <string name="continuer_la_lecture">continue reading</string>
+
+    <string name="Precondition_Required_no_associated_driver">Prerequisite: unassociated driver</string>
+
+    <string name="app_name">SPI</string>
+    <string name="com_auth0_lock_action_log_in">S’identifier</string>
+    <string name="entrer_votre_Email">Enter your email</string>
+    <string name="format_email_incorrecte">Email incorrect</string>
+    <string name="entrer_votre_mot_de_passe">Enter your password</string>
+    <string name="email_ou_mot_de_passe_incorrect">Incorrect email or password</string>
+
+    <string name="appwidget_text">Mobile road</string>
+    <string name="appwidget_text_start_pointage">Score  %s  in  progress</string>
+    <string name="appwidget_text_end_pointage">Pointing stopped</string>
+
+    <string name="Lundi">L</string>
+    <string name="Mardi">M</string>
+    <string name="Mercredi">M</string>
+    <string name="Jeudi">J</string>
+    <string name="Vendredi">V</string>
+    <string name="Samedi">S</string>
+    <string name="Dimanche">D</string>
+    <string name="_24">24</string>
+    <string name="avr">APR</string>
+    <string name="cumul_journ_e">Day cumulative</string>
+    <string name="_8_00">8:00</string>
+    <string name="_00_00">00:00</string>
+    <string name="demande_d_absence">Leave request</string>
+    <string name="votre_demande_d_absence_pour_le_15_04_2020_a_t">Your absence request for 04/15/2020 has been</string>
+    <string name="il_y_a_2_min">2 min ago</string>
+    <string name="accueil">Home</string>
+    <string name="pointeuse">Pointeuse</string>
+    <string name="mes_activit_s">My activities</string>
+    <string name="menu_card_reader">Card reader</string>
+    <string name="mon_administratif">My Administrative</string>
+    <string name="notifications">Notifications</string>
+    <string name="messagerie">Messaging</string>
+    <string name="profil">Profile</string>
+    <string name="a_propos">About</string>
+    <string name="miguel_albert">Miguel Albert</string>
+    <string name="lundi_13_avril_2020">Monday, April 13, 2020</string>
+    <string name="mes_notifications">My Notifications</string>
+    <string name="voir_tous">View all</string>
+    <string name="_19_janvier_2029">January 19, 2029</string>
+    <string name="service">Service</string>
+    <string name="nuit">Night</string>
+    <string name="mes_prochaines_absences">My Next Absences</string>
+    <string name="type_d_absence">Type d\'absence :</string>
+    <string name="choisir_votre_type_d_absence">Choose your type of absence</string>
+    <string name="date_de_d_but">Start date :</string>
+    <string name="date_de_fin">End date :</string>
+    <string name="dur_e">Duration</string>
+    <string name="duree">Duration</string>
+    <string name="votre_commentaire">Your comment :</string>
+    <string name="ecrivez_votre_commentaire_ici">Write your comment here</string>
+    <string name="votre_demande_d_absence_est_maintenant_en_attente">Your absence request is now pending</string>
+    <string name="ok">Ok</string>
+    <string name="annuler">To cancel</string>
+    <string name="terminer">Finish</string>
+    <string name="votre_demande_est_en_cours_de_traitement">Your request is being processed</string>
+    <string name="heure_d_but">beginning hour</string>
+    <string name="heure_fin">End time</string>
+    <string name="heure_de_fin">End time</string>
+    <string name="publi_par">published by</string>
+    <string name="m_albertoo">- M Albertoo</string>
+    <string name="il_y_a_2_jours">2 days ago</string>
+    <string name="_24_mars_2020">24 Mars 2020</string>
+    <string name="_5_46">5:46</string>
+    <string name="ajouter_un_commentaire">add a comment</string>
+    <string name="pas_de_commentaires_pour_le_moment">No comments yet</string>
+    <string name="tous_les_commentaires_apparaissent_ici">All comments appear here</string>
+    <string name="_2_jours">2 days</string>
+    <string name="demande_d_absence_valid_e">Absence request validated</string>
+    <string name="du_15_04_2020">From 04/15/2020</string>
+    <string name="_17_04_2020">17/04/2020</string>
+    <string name="solde_absence">Absence balance</string>
+    <string name="demande_d_absence_en_cours">Absence request in progress</string>
+    <string name="cp">CP</string>
+    <string name="rc">RC</string>
+    <string name="r">R</string>
+    <string name="rcr">RCR</string>
+    <string name="votre_solde_est">Your balance is: 4.00</string>
+    <string name="acquis">Acquis</string>
+    <string name="pris">Award</string>
+    <string name="en_attente">Waiting</string>
+    <string name="jours">Days</string>
+    <string name="du">Of</string>
+    <string name="au">At</string>
+    <string name="gerer_les_absences">Manage absences</string>
+    <string name="mes_absences">My absences</string>
+    <string name="calendrier_d_quipe">Team Calendar</string>
+    <string name="_18_02_2020">18/02/2020</string>
+    <string name="_au">at</string>
+    <string name="au_17_04_2020">to 04 17 2020</string>
+    <string name="a_valider">To validate</string>
+    <string name="valid_es">Validated</string>
+    <string name="refus_es">Refused</string>
+    <string name="cong_pay">Paid leave</string>
+    <string name="r_cup_ration">Recovery</string>
+    <string name="repos_compensateur">Compensatory rest</string>
+    <string name="repos_compensateur_remplacement">Rest Compensator Replacement</string>
+    <string name="alphab_tique">Alphabetical</string>
+    <string name="filtre">Filtered</string>
+    <string name="date_d_ch_ance">Due date</string>
+    <string name="cong_s_pay_s">Paid vacation</string>
+    <string name="cong_s_sans_solde">Unpaid leave</string>
+    <string name="historique_d_absences">History of absences</string>
+    <string name="demandes_accept_es">Accepted requests</string>
+    <string name="demandes_en_attente">Pending requests</string>
+    <string name="demandes_refus_es">Rejected requests</string>
+    <string name="pas_d_absences_pour">No absences for</string>
+    <string name="toutes_les_absences_appara_tront_ici">All absences will appear here</string>
+    <string name="valider">Validate</string>
+    <string name="refuser">Refuse</string>
+    <string name="mes_activites">My activities</string>
+
+    <string name="card">card reader</string>
+
+
+    <string-array name="days">
+        <item>@string/Lundi</item>
+        <item>@string/Mardi</item>
+        <item>@string/Mercredi</item>
+        <item>@string/Jeudi</item>
+        <item>@string/Vendredi</item>
+        <item>@string/Samedi</item>
+        <item>@string/Dimanche</item>
+    </string-array>
+
+    <string name="Cumul_Mensuel">Monthly Accumulation</string>
+    <string name="Nombre_de_jours">Number of days</string>
+    <string name="Temps_de_service">Service time</string>
+    <string name="Heure_nuit">Hour night</string>
+
+    <string name="janvier">January</string>
+    <string name="fevrier">February</string>
+    <string name="mars">Mars</string>
+    <string name="avril">Avril</string>
+    <string name="mai">May</string>
+    <string name="juin">June</string>
+    <string name="juillet">July</string>
+    <string name="août">August</string>
+    <string name="septembre">September</string>
+    <string name="octobre">October</string>
+    <string name="novembre">November</string>
+    <string name="décembre">December</string>
+
+    <string name="salari_s_pr_sents">Employees Present</string>
+    <string name="salari_s_absents">Absent employees</string>
+    <string name="demandes_d_absence">Absence requests</string>
+    <string name="sp">SP</string>
+    <string name="sa">TO</string>
+    <string name="pas_de_demandes">No requests</string>
+    <string name="d_absence">d\'absence</string>
+    <string name="toutes_les_demandes_d_absence_appara_tront_ici">All absence requests will appear here</string>
+    <string name="pas_de_salari_s">No employees</string>
+    <string name="pr_sents">present</string>
+    <string name="absents">absent</string>
+    <string name="tous_les_salari_s_absents_appara_tront_ici">All absent employees will appear here</string>
+    <string name="mon_activit_de_la_journ_e">My activity of the day</string>
+
+    <string name="mensuel">Monthly</string>
+    <string name="hebdomadaire">Weekly</string>
+    <string name="ouvrir">to open</string>
+    <string name="fermer">to close</string>
+    <string name="toolbar_and_header">toolbar_and_header</string>
+    <string name="d_tails_demande">Details Request</string>
+    <string name="d_tails_du_cong">Leave details</string>
+    <string name="type_de_absence">Type d\'absence</string>
+    <string name="commentaire">Comment</string>
+    <string name="Loreum_ipsum_die_dolr_die_ipsum_loreum_die_dolt">Virtual dolr on the very sexy on the dolt</string>
+    <string name="de">Of</string>
+    <string name="_15_01_2020">15/01/2020</string>
+    <string name="soldes_d_absence_du_salari">Employee absence balances:</string>
+    <string name="cette_demande_d_absence_a_t_valid_e">This absence request has been validated</string>
+    <string name="cette_demande_d_absence_a_t_refus_e">This absence request was refused</string>
+    <string name="cette_demande_d_absence_a_t_mise_en_attente">This absence request has been put on hold</string>
+
+    <string name="semaine">Week</string>
+    <string name="semaine_d">Week + %d</string>
+
+    <string name="choisir_l_annee">Choose the Year</string>
+    <string name="Heure_début">beginning hour</string>
+    <string name="Heure_de_fin">End time</string>
+    <string name="vue_graphique">Graphic view</string>
+    <string name="votre_cumul_de_la_journ_e">Your total for the day</string>
+    <string name="petit_d_jeuner">Breakfast</string>
+    <string name="mes_frais">My costs</string>
+    <string name="infractions">Infractions</string>
+    <string name="indemnite">Indemnities</string>
+    <string name="votre_cumul_mensuel">Your monthly cumulative</string>
+
+    <string name="Tous">All</string>
+
+    <string name="Periode">Period</string>
+    <string name="Date_de_debut_">Start date :</string>
+    <string name="Date_de_fin_">End date :</string>
+
+    <string name="d_coucher">Sleeping</string>
+
+    <string name="Infraction">Infractions</string>
+    <string name="duree_">Duration:</string>
+    <string name="Durée_autorisée">Authorized duration</string>
+    <string name="Durée_effectuée">Duration completed</string>
+    <string name="Repos_autorisée">Authorized rest</string>
+    <string name="Repos_effectuée">Rest performed</string>
+    <string name="repos_">Repos :</string>
+    <string name="Votre_Commentaire_">Your comment :</string>
+    <string name="Justificatifs_">Supporting documents:</string>
+    <string name="Camera">Camera</string>
+    <string name="Galerie">Gallery</string>
+    <string name="Annuler">To cancel</string>
+    <string name="Êtes_vous_sûr_de_vouloir_quitter">Are you sure you want to quit?</string>
+    <string name="Oui">Yes</string>
+    <string name="Non">Non</string>
+    <string name="le_format_selectionne_est_incorrect">the selected format is incorrect</string>
+    <string name="veuillez_selectionner_un_document_depuis_votre_memoire_interne">please select a document from your internal memory</string>
+    <string name="votre_cumul_hebdomadaire">Your weekly cumulative</string>
+    <string name="Matricule_">Registration number :</string>
+    <string name="Nom_">Last name :</string>
+    <string name="Prénom_">First name:</string>
+    <string name="Date_de_naissance_">Date of Birth :</string>
+    <string name="Se_déconnecter">Sign out</string>
+    <string name="Deconnexion">Logout</string>
+    <string name="En_cliquant_sur_déconnexion_vous_allez_vous_déconnectez_de_votre_compte">By clicking on logout you will log out of your account</string>
+    <string name="il_faut_choisir_la_date_de_debut_de_votre_conge">You must choose the start date of your leave</string>
+    <string name="cumul_hebdomadaire">Weekly accumulation</string>
+    <string name="reglage">Setting</string>
+    <string name="Nouveau_Message">New message</string>
+    <string name="Destinataire_">Recipient :</string>
+    <string name="Objet_">Subject:</string>
+    <string name="Message_Prédéfini">Predefined Message</string>
+    <string name="Message_">Message :</string>
+    <string name="Enregistrer_le_message_comme_message_prédéfini">Save the message as a predefined message</string>
+    <string name="Envoyer">To send</string>
+    <string name="Choisir_votre_message_prédéfini">Choose your predefined message</string>
+    <string name="Ecrire_votre_message_ici">Write your message here</string>
+    <string name="Cherchez_votre_destinataire">Find your recipient</string>
+    <string name="Trouvez_votre_destinataire">Find your recipient</string>
+    <string name="Recherche_Récente_">Recent Research:</string>
+    <string name="boite_de_reception">Mailbox</string>
+    <string name="message_predefini">Predefined Message</string>
+    <string name="_14_32">14:32</string>
+    <string name="message_lu">Message lu</string>
+    <string name="lorum_ipsum_die_dalr_ipsum_ae_ipsum_die_dalr_ipsum_loreu_ipsum_ip_ipsum_die_dalr_ipsum_ae_dlar_die_ipsu_lorem_die_ipsum">Dalr the strap itself as very very very very sexy IP Dalr on the very day Dalr itself as dlar on the day itself ... Ipsum lorem.</string>
+    <string name="objet">Subject:</string>
+    <string name="message">Message :</string>
+    <string name="Indemnités_et_primes">Indemnities and premiums</string>
+    <string name="Mes_notes_de_frais">My expense reports</string>
+    <string name="Solde_absences">Absences balance</string>
+    <string name="Frais">Fresh</string>
+    <string name="Montant">Amount</string>
+    <string name="veuillez_choisir_une_date">please choose a date</string>
+    <string name="Message_non_lu">Unread message</string>
+
+    <string name="Di">Sunday</string>
+    <string name="Lu">Monday</string>
+    <string name="Ma">Tuesday</string>
+    <string name="Me">Wednesday</string>
+    <string name="Je">Thursday</string>
+    <string name="Ve">Friday</string>
+    <string name="Sa">Saturday</string>
+    <string name="retour">Return</string>
+    <string name="recherche">Research</string>
+    <string name="demande">Request</string>
+    <string name="_4_d_penses_de_26_au_28_juillet_2020">4 expenses from July 26 to 28, 2020</string>
+    <string name="Nouvelle_Demande">New request</string>
+    <string name="Titre_">Title:</string>
+    <string name="Commentaire_">Comment:</string>
+    <string name="Dépense">Expenses:</string>
+    <string name="Nouvelle_Dépense">New Expense</string>
+    <string name="Date_de_dépense_">Date of expenditure:</string>
+    <string name="Type_de_dépense_">Type of expense:</string>
+    <string name="Montant_">Amount:</string>
+    <string name="Choisir_votre_type_de_dépense">Choose your type of expense</string>
+    <string name="Hotel">Hotel</string>
+    <string name="Ajouter">Add</string>
+    <string name="Votre_dépense_a_été_ajouter_avec_succès">Your expense has been added successfully</string>
+    <string name="ajouter_une_autre_dépense">add another expense</string>
+    <string name="Confirmez_l_envoi_de_votre_demande">Confirm the sending of your request</string>
+    <string name="il_sera_impossible_de_la_modifier_après_l_enregistrement">* it will not be possible to modify it after registration</string>
+    <string name="Email">Email</string>
+    <string name="voulez_vous_enregistrer_cette_nouvelle_demande_avant_de_quitter">Do you want to save this new request before exiting?</string>
+    <string name="envoyer_une_copie">Send a copy to</string>
+    <string name="voulez_vous_enregistrer_votre_d_pense_avant_de_quitter">Do you want to save your expense before you leave?</string>
+    <string name="d_tail_d_pense">Expense Details</string>
+    <string name="enregistrer">Record</string>
+    <string name="il_faut_choisir_le_type_de_votre_absence">You have to choose the type of your absence</string>
+    <string name="Graph">Graph</string>
+    <string name="Mon_activité_de_la_journée">My activity of the day</string>
+    <string name="s_lectionnez_une_infraction_dans_la_liste_gauche_pour_voir_les_d_tails_de_celle_ci">Select an offense from the list on the left to see its details</string>
+    <string name="Aucun_message_sélectionné">No message selected</string>
+    <string name="écrivez_un_message">write a message</string>
+    <string name="Trouver_votre_message">Find your message</string>
+    <string name="message_predefini_">Predefined Message:</string>
+    <string name="Réglages">Settings</string>
+    <string name="Notifications">Notifications</string>
+    <string name="Gestion_des_congés">Leave management</string>
+    <string name="Notes_de_frais">Expense</string>
+    <string name="Pointeuse">Pointeuse</string>
+    <string name="Infractions">Infractions</string>
+    <string name="Notifications_Pointeuse">Notifications Pointeuse</string>
+    <string name="Quand_le_temps_de_travail_journalier_est_supérieur_à_">When the daily working time is greater than:</string>
+    <string name="Temps_de_travail">Work time :</string>
+    <string name="sa_cr_ation_strada_ciblait_essentiellement_le_secteur_du_transport_elle_s_adresse_aujourd_hui_toute_soci_t_poss_dant_une_flotte_de_v_hicules_vl_vu_pl_engins_de_chantier_autocars">When it was created STRADA primarily targeted the transport sector. Today, it is aimed at any company with a fleet of vehicles: light vehicles, LCVs, PL, construction machinery, coaches, etc.</string>
+    <string name="pour_cela_3_gammes_de_produits_ont_t_d_velopp_es_la_gestion_des_temps_l_informatique_embarqu_e_et_la_gestion_d_exploitation">For this, 3 product ranges have been developed: time management, on-board computing and operations management.</string>
+    <string name="version">Version</string>
+    <string name="compos_e_de_44_collaborateurs_strada_a_su_s_imposer_sur_le_march_fran_ais_et_espagnol">Composed of 44 employees, STRADA has established itself on the French and Spanish market.</string>
+    <string name="propos">About</string>
+    <string name="Veuillez_vérifier_votre_connexion_Internet">Please check your internet connection</string>
+    <string name="Déplacement">Shifting</string>
+
+    <string name="_janv">jan</string>
+    <string name="_févr">feb</string>
+    <string name="_mars">mars</string>
+    <string name="_avril">avril</string>
+    <string name="_mai">May</string>
+    <string name="_juin">June</string>
+    <string name="_juil">Jul</string>
+    <string name="_août">August</string>
+    <string name="_sept">sept</string>
+    <string name="_oct">oct</string>
+    <string name="_nov">nov</string>
+    <string name="_déc">Dec</string>
+
+    <string name="type">Type</string>
+    <string name="Synchronisation_avec_Firebase">Synchronization with Firebase</string>
+    <string name="Cette_action_doit_vous_étres_demandée_par_un_collaborateur_de_Strada_Service">This action must be requested by a Strada Service employee</string>
+    <string name="Etes_vous_sur_de_vouloir_activer_cette_foncionnalité_">Are you sure you want to activate this feature?</string>
+    <string name="Activer">Activate</string>
+    <string name="Desactiver">Deactivate</string>
+    <string name="utilisateur_non_connecté">user not logged in</string>
+    <string name="veuillez_activer_l_heure_automatique_sur_votre_appareil">please enable automatic time on your device</string>
+    <string name="ilya_s_jour">ilya  %s  day</string>
+    <string name="ilya_s_jours">ilya  %s days</string>
+    <string name="vie_prive">Private life</string>
+    <string name="Etes_vous_sur_de_vouloir_activer_vie_prive">Are you sure you want to activate private life?</string>
+    <string name="Etes_vous_sur_de_vouloir_desactiver_vie_prive">Are you sure you want to deactivate private life?</string>
+
+    <string name="aujourd_hui">today</string>
+
+    <string name="aucune_connexion_internet">No internet connection</string>
+    <string name="Vous_êtes_hors_ligne_vos_informations_seront_synchronisées_dès_le_retour_de_la_connexion">You are offline your information will be synchronized as soon as the connection is returned</string>
+
+    <string name="Success">Success !</string>
+    <string name="La_connexion_est_rétablie_vos_informations_ont_été_synchronisées_avec_nos_serveurs">The connection is restored, your information has been synchronized with our servers.</string>
+
+    <string name="pour_vous_identifier">Pour vous identifier</string>
+    <string name="saisissez_vos_nom_et_code_confidentiel_ou_ins_rez_votre_carte_dans_le_lecteur">Saisissez vos nom et code confidentiel ou Insérez votre carte dans le lecteur</string>
+    <string name="code_confidentielle">Code confidentielle</string>
+    <string name="acc_der_mon_espace_personnel">accéder à mon espace personnel</string>
+    <string name="veuillez_entrez_votre_adresse_email_pour_changez_votre_mot_de_passe">Veuillez entrez votre adresse email pour changez votre mot de passe !</string>
+    <string name="continuer"><![CDATA[Continuer >]]></string>
+    <string name="Non_autorisé">Not authorised</string>
+    <string name="mot_de_passe">Password</string>
+    <string name="connexion">Log in</string>
+    <string name="appliquer">apply</string>
+    <string name="s_dépenses_de_s_au_s">%s expenditure from %s to %s</string>
+    <string name="s_dépense_de_s_au_s">%s expenditure the %s</string>
+    <string name="demande_acceptée">Request accepted</string>
+    <string name="demande_en_cours">Request in progress</string>
+    <string name="catégories_d_infractions">Categories of offenses</string>
+    <string name="infraction_envoyée">offense sent</string>
+    <string name="menu">Menu</string>
+    <string name="mes_documents">Mes Documents</string>
+    <string name="Type_d_activité">Type of activity</string>
+    <string name="add_document">add document</string>
+</resources>
